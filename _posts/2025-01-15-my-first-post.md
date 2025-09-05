@@ -4,15 +4,6 @@ title: "数学公式测试"
 date: 2025-01-15
 ---
 
-<!-- 在文章开头定义数学命令 -->
-$$
-\newcommand{\vecc}[1]{\boldsymbol{#1}}
-\newcommand{\mat}[1]{\mathbf{#1}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\dd}[1]{\,\mathrm{d}#1}
-\newcommand{\norm}[1]{\left\|#1\right\|}
-$$
 
 # 线性代数示例
 
