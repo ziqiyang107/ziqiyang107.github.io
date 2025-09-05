@@ -1,0 +1,7 @@
+# _config.yml
+title: My Blog
+description: A blog powered by Jekyll and GitHub Pages
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
