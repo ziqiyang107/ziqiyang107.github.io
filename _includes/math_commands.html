@@ -1,0 +1,63 @@
+<!-- 全局数学命令定义 -->
+<div style="display: none;">
+$$
+% 向量命令
+\newcommand{\vecc}[1]{\boldsymbol{#1}}
+\newcommand{\vecv}[1]{\boldsymbol{#1}}
+\newcommand{\veca}[1]{\boldsymbol{#1}}
+\newcommand{\vzero}{\boldsymbol{0}}
+\newcommand{\vone}{\boldsymbol{1}}
+
+% 矩阵命令
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\Id}{\mathbf{I}}
+
+% 数学集合
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% 微分算子
+\newcommand{\dd}[1]{\,\mathrm{d}#1}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+
+% 梯度、散度、旋度
+\newcommand{\grad}{\nabla}
+\newcommand{\dive}{\nabla \cdot}
+\newcommand{\curl}{\nabla \times}
+\newcommand{\lapl}{\nabla^2}
+
+% 范数和内积
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
+
+% 概率统计
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]}
+\newcommand{\Pr}[1]{\mathbb{P}\left(#1\right)}
+
+% 求和、积分、极限
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+\newcommand{\Lim}[2]{\lim_{#1 \to #2}}
+
+% 特殊函数
+\newcommand{\sinc}{\mathrm{sinc}}
+\newcommand{\erf}{\mathrm{erf}}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+% 物理学常用
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}
+
+% 复分析
+\newcommand{\Res}[2]{\underset{#1}{\mathrm{Res}}\,#2}
+\newcommand{\Log}{\mathrm{Log}}
+\newcommand{\Arg}{\mathrm{Arg}}
+$$
+</div>
