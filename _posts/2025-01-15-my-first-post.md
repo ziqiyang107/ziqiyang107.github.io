@@ -22,6 +22,13 @@ date: 2025-01-15
 
 简单的数学公式：$a + b = c$
 
+$$
+\begin{align}
+\frac{d}{dx}\left( \int_{a}^{x} f(t) \, dt\right) &= f(x) \\
+\sum_{n=1}^{\infty} \frac{1}{n^2} &= \frac{\pi^2}{6}
+\end{align}
+$$
+
 ### 代码
 
 ```python
