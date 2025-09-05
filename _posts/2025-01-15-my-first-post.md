@@ -1,38 +1,49 @@
 ---
 layout: post
-title: "我的第一篇文章"
+title: "数学公式测试"
 date: 2025-01-15
 ---
 
-## 欢迎来到我的博客！
-
-这是我的第一篇博客文章。
-
-### 简单测试
-
-这里是一些测试内容：
-
-- 第一项
-- 第二项  
-- 第三项
-
-**粗体文字** 和 *斜体文字*
-
-### 数学公式
-
-简单的数学公式：$a + b = c$
-
+<!-- 在文章开头定义数学命令 -->
 $$
-\begin{align}
-\frac{d}{dx}\left( \int_{a}^{x} f(t) \, dt\right) &= f(x) \\
-\sum_{n=1}^{\infty} \frac{1}{n^2} &= \frac{\pi^2}{6}
-\end{align}
+\newcommand{\vecc}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}[1]{\,\mathrm{d}#1}
+\newcommand{\norm}[1]{\left\|#1\right\|}
 $$
 
-### 代码
+# 线性代数示例
 
-```python
-print("Hello World!")
-```
+## 向量运算
 
-感谢阅读！
+设向量 $\vecc{a} = (a_1, a_2, a_3)^T$ 和 $\vecc{b} = (b_1, b_2, b_3)^T$，则：
+
+$$
+\vecc{a} \cdot \vecc{b} = \sum_{i=1}^{3} a_i b_i
+$$
+
+向量的范数：$\norm{\vecc{a}} = \sqrt{\vecc{a} \cdot \vecc{a}}$
+
+## 矩阵运算
+
+矩阵 $\mat{A} \in \R^{n \times m}$，向量 $\vecc{x} \in \R^m$：
+
+$$
+\mat{A}\vecc{x} = \vecc{b}
+$$
+
+## 微积分
+
+函数 $f(x, y)$ 的偏导数：
+
+$$
+\pdv{f}{x}, \quad \pdv{f}{y}
+$$
+
+微分形式：
+
+$$
+\dd{f} = \pdv{f}{x}\dd{x} + \pdv{f}{y}\dd{y}
+$$
