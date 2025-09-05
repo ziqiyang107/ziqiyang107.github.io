@@ -1,9 +1,22 @@
-# _config.yml
-title: My Blog
-description: A blog powered by Jekyll and GitHub Pages
-theme: jekyll-theme-cayman
+title: Your Blog Title
+description: Your blog description
+baseurl: ""
+url: "https://ziqiyang107.github.io"
+
+# Jekyll 设置
 markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# MathJax 设置
 kramdown:
   math_engine: mathjax
-styles:
-  - /styles.css
+  syntax_highlighter: rouge
+
+# 其他设置
+timezone: Asia/Shanghai
