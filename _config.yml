@@ -5,3 +5,5 @@ theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+styles:
+  - /styles.css
