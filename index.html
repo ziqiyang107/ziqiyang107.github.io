@@ -1,0 +1,26 @@
+---
+layout: default
+title: 首页
+---
+
+<div class="home">
+    <h2>最新文章</h2>
+    
+    {% for post in site.posts %}
+    <article class="post-preview">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</p>
+        <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+    </article>
+    {% endfor %}
+    
+    {% if site.posts.size == 0 %}
+    <p>还没有文章，<a href="#writing-guide">开始写第一篇吧！</a></p>
+    {% endif %}
+</div>
+
+<div id="writing-guide" style="margin-top: 3rem; padding: 2rem; background: #f5f5f5; border-radius: 8px;">
+    <h2>如何写新文章</h2>
+    <p>在 <code>_posts</code> 文件夹中创建新文件，文件名格式：<code>YYYY-MM-DD-文章标题.md</code></p>
+    <p>例如：<code>2024-01-01-my-first-post.md</code></p>
+</div>
