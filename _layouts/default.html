@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} - {{ site.title }}</title>
+    
+    <!-- 阻止搜索引擎索引 -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    
+    <!-- 阻止社交媒体预览 -->
+    <meta property="og:title" content="Private Blog">
+    <meta property="og:description" content="This is a private blog.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Private Blog">
+    <meta name="twitter:description" content="This is a private blog.")
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     
     <!-- MathJax 配置 -->
