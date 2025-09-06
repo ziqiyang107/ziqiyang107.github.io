@@ -18,10 +18,10 @@ $$
 
 ## 换行align示例2
 $$
-\begin{align}
+\begin{align*}
 x &= 1+1 \\
 &= 2
-\end{align}
+\end{align*}
 $$
 
 ## 向量运算
