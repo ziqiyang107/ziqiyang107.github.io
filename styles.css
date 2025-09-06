@@ -109,7 +109,6 @@ blockquote {
     background-color: #f0f8ff;
     border: 1px solid #e0e8f0;
     transition: background-color 0.2s;
-    display: inline; /* 避免换行 */
 }
 
 .citation:hover {
@@ -123,7 +122,6 @@ blockquote {
     background-color: #ffe6e6;
     padding: 1px 3px;
     border-radius: 3px;
-    display: inline;  /* 保证错误引用也在同一行显示 */
 }
 
 /* 参考文献区域 */
