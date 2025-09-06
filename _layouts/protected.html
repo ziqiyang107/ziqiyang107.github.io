@@ -174,78 +174,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <script>
-        // 存储密码的SHA-256哈希值，而不是明文
-        const PASSWORD_HASH = "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3";
-    
-        // 检查是否已经登录
-        if (sessionStorage.getItem('blog_authenticated') === 'true') {
-            showContent();
-        }
-        
-        // 回车键登录
-        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-        async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-        
-        async function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            const inputHash = await hashPassword(input);
+            // 密码的SHA-256哈希值
+            const PASSWORD_HASH = "8b2c86ea9cf2ea4eb517fd1e06b74f399e7fdf8c0d4b89fd7b8c6e1f8aa3c5a8";
             
-            if (inputHash === PASSWORD_HASH) {
-                sessionStorage.setItem('blog_authenticated', 'true');
+            // 哈希函数
+            async function hashPassword(password) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            }
+            
+            // 检查是否已经登录
+            if (sessionStorage.getItem('blog_authenticated') === 'true') {
                 showContent();
-            } else {
-                alert('密码错误！');
             }
-        }
-        
-        function showContent() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.body.className = 'content-mode';
             
-            const contentElement = document.getElementById('content');
-            contentElement.classList.add('show');
-            
-            // 确保 MathJax 完全加载后再渲染
-            setTimeout(function() {
-                if (typeof MathJax !== 'undefined' && MathJax.Hub) {
-                    console.log('MathJax 重新渲染开始...');
-                    MathJax.Hub.Queue([
-                        "Typeset", 
-                        MathJax.Hub, 
-                        contentElement
-                    ], function() {
-                        console.log('MathJax 渲染完成！');
-                    });
-                } else {
-                    console.log('MathJax 未加载');
+            // 回车键登录
+            document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPassword();
                 }
-            }, 100);
-        }
-        
-        // 防止右键和开发者工具（基础保护）
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
-                (e.ctrlKey && e.key === 'U')) {
-                e.preventDefault();
-                alert('此功能已被禁用');
+            });
+            
+            async function checkPassword() {
+                const inputPassword = document.getElementById('passwordInput').value;
+                try {
+                    const inputHash = await hashPassword(inputPassword);
+                    
+                    if (inputHash === PASSWORD_HASH) {
+                        sessionStorage.setItem('blog_authenticated', 'true');
+                        showContent();
+                    } else {
+                        document.getElementById('errorMessage').style.display = 'block';
+                        document.getElementById('passwordInput').value = '';
+                        document.getElementById('passwordInput').focus();
+                    }
+                } catch (error) {
+                    console.error('密码验证错误:', error);
+                    document.getElementById('errorMessage').style.display = 'block';
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordInput').focus();
+                }
             }
-        });
+            
+            function showContent() {
+                document.getElementById('loginForm').style.display = 'none';
+                document.body.className = 'content-mode';
+                
+                const contentElement = document.getElementById('content');
+                contentElement.classList.add('show');
+                
+                // 确保 MathJax 完全加载后再渲染
+                setTimeout(function() {
+                    if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+                        console.log('MathJax 重新渲染开始...');
+                        MathJax.Hub.Queue([
+                            "Typeset", 
+                            MathJax.Hub, 
+                            contentElement
+                        ], function() {
+                            console.log('MathJax 渲染完成！');
+                        });
+                    } else {
+                        console.log('MathJax 未加载');
+                    }
+                }, 100);
+            }
+            
+            // 防止右键和开发者工具（基础保护）
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+                    (e.ctrlKey && e.key === 'U')) {
+                    e.preventDefault();
+                    alert('此功能已被禁用');
+                }
+            });
     </script>
 </body>
 </html>
