@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问受限 - {{ site.title }}</title>
+    
+    <!-- 阻止搜索引擎索引 -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .login-container p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .password-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .password-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .login-button:hover {
+            transform: translateY(-2px);
+        }
+        .error-message {
+            color: #e74c3c;
+            margin-top: 1rem;
+            display: none;
+        }
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginForm">
+        <h1>🔒 私人博客</h1>
+        <p>此博客需要密码访问</p>
+        <input type="password" id="passwordInput" class="password-input" placeholder="请输入访问密码" autofocus>
+        <button onclick="checkPassword()" class="login-button">进入博客</button>
+        <p class="error-message" id="errorMessage">密码错误，请重试</p>
+    </div>
+    
+    <div class="content" id="content">
+        {{ content }}
+    </div>
+
+    <script>
+        // 设置密码（建议定期更换）
+        const BLOG_PASSWORD = "your_password_2025"; // 请修改为你想要的密码
+        
+        // 检查是否已经登录
+        if (sessionStorage.getItem('blog_authenticated') === 'true') {
+            showContent();
+        }
+        
+        // 回车键登录
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        function checkPassword() {
+            const inputPassword = document.getElementById('passwordInput').value;
+            if (inputPassword === BLOG_PASSWORD) {
+                sessionStorage.setItem('blog_authenticated', 'true');
+                showContent();
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+        
+        function showContent() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.body.style.background = '#f5f5f5';
+        }
+        
+        // 防止右键和开发者工具（基础保护）
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+                alert('此功能已被禁用');
+            }
+        });
+    </script>
+</body>
+</html>
