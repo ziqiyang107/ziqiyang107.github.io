@@ -174,9 +174,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <script>
-        // 设置密码（建议定期更换）
-        const BLOG_PASSWORD = "ziy16107"; // 请修改为你想要的密码
-        
+        // 存储密码的SHA-256哈希值，而不是明文
+        const PASSWORD_HASH = "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3";
+    
         // 检查是否已经登录
         if (sessionStorage.getItem('blog_authenticated') === 'true') {
             showContent();
@@ -188,16 +188,24 @@
                 checkPassword();
             }
         });
+
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
         
-        function checkPassword() {
-            const inputPassword = document.getElementById('passwordInput').value;
-            if (inputPassword === BLOG_PASSWORD) {
+        async function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            const inputHash = await hashPassword(input);
+            
+            if (inputHash === PASSWORD_HASH) {
                 sessionStorage.setItem('blog_authenticated', 'true');
                 showContent();
             } else {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('passwordInput').value = '';
-                document.getElementById('passwordInput').focus();
+                alert('密码错误！');
             }
         }
         
