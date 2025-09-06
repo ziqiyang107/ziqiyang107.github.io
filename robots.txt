@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /
+
+# 阻止所有搜索引擎爬虫
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: twitterbot
+Disallow: /
+
+# 没有站点地图
+Sitemap:
