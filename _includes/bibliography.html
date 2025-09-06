@@ -1,0 +1,40 @@
+{% if include.keys %}
+<div class="bibliography">
+    <h3>参考文献</h3>
+    <ol class="references">
+        {% assign ref_keys = include.keys | split: ',' %}
+        {% for key_raw in ref_keys %}
+            {% assign key = key_raw | strip %}
+            {% assign ref = site.data.references[key] %}
+            {% if ref %}
+            <li id="ref-{{ key }}" class="reference-item">
+                <span class="authors">
+                    {% for author in ref.authors %}
+                        {% unless forloop.first %}, {% endunless %}{{ author }}
+                    {% endfor %}
+                </span>
+                {% if ref.year %}({{ ref.year }}).{% endif %}
+                
+                <span class="title">
+                    {% if ref.url %}<a href="{{ ref.url }}" target="_blank">{% endif %}
+                    {{ ref.title }}
+                    {% if ref.url %}</a>{% endif %}
+                </span>.
+                
+                {% if ref.journal %}
+                <em>{{ ref.journal }}</em>
+                    {% if ref.volume %}, {{ ref.volume }}{% endif %}
+                    {% if ref.number %}({{ ref.number }}){% endif %}
+                    {% if ref.pages %}, {{ ref.pages }}{% endif %}.
+                {% elsif ref.booktitle %}
+                In <em>{{ ref.booktitle }}</em>
+                    {% if ref.pages %} (pp. {{ ref.pages }}){% endif %}.
+                {% endif %}
+                
+                {% if ref.publisher %} {{ ref.publisher }}.{% endif %}
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</div>
+{% endif %}
