@@ -1,1 +1,1 @@
-{% assign ref_key = include.key %}{% assign ref = site.data.references[ref_key] %}{% if ref %}[{{ include.display | default: ref_key }}]{% else %}[{{ ref_key }}?]{% endif %}
+{% assign ref_key = include.key %}{% assign ref = site.data.references[ref_key] %}{% if ref %}<a href="#ref-{{ ref_key }}" class="citation">[{{ include.display | default: ref_key }}]</a>{% else %}<span class="citation-error">[{{ ref_key }}?]</span>{% endif %}
