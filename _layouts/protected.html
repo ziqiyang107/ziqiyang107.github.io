@@ -10,8 +10,10 @@
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    
     <style>
-        body {
+        body.login-mode {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
@@ -20,6 +22,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        body.content-mode {
+            background: #f5f5f5;
+            font-family: 'Arial', sans-serif;
         }
         .login-container {
             background: white;
@@ -73,9 +79,12 @@
         .content {
             display: none;
         }
+        .content.show {
+            display: block;
+        }
     </style>
 </head>
-<body>
+<body class="login-mode">
     <div class="login-container" id="loginForm">
         <h1>🔒 私人博客</h1>
         <p>此博客需要密码访问</p>
@@ -85,12 +94,88 @@
     </div>
     
     <div class="content" id="content">
-        {{ content }}
+        <header>
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <p>{{ site.description }}</p>
+        </header>
+        
+        <main>
+            {% include math_commands.html %}
+            {{ content }}
+        </main>
+        
+        <footer>
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+        </footer>
     </div>
+
+    <!-- MathJax 配置 - 放在这里确保先加载 -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            },
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"],
+                Macros: {
+                    // 向量命令
+                    vecc: ["\\boldsymbol{#1}", 1],
+                    vecv: ["\\boldsymbol{#1}", 1],
+                    veca: ["\\boldsymbol{#1}", 1],
+                    // 常用向量
+                    vzero: "\\boldsymbol{0}",
+                    vone: "\\boldsymbol{1}",
+                    // 矩阵命令
+                    mat: ["\\mathbf{#1}", 1],
+                    // 微分算子
+                    dd: ["\\,\\mathrm{d}#1", 1],
+                    // 偏导数
+                    pdv: ["\\frac{\\partial #1}{\\partial #2}", 2],
+                    // 梯度、散度、旋度
+                    grad: "\\nabla",
+                    dive: "\\nabla \\cdot",
+                    curl: "\\nabla \\times",
+                    // 期望值
+                    E: ["\\mathbb{E}\\left[#1\\right]", 1],
+                    // 概率
+                    Pr: ["\\mathbb{P}\\left(#1\\right)", 1],
+                    // 实数、复数集合
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}",
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    Q: "\\mathbb{Q}",
+                    // 范数
+                    norm: ["\\left\\|#1\\right\\|", 1],
+                    abs: ["\\left|#1\\right|", 1],
+                    // 内积
+                    inner: ["\\langle #1, #2 \\rangle", 2],
+                    // 求和、积分
+                    Sum: ["\\sum_{#1}^{#2}", 2],
+                    Int: ["\\int_{#1}^{#2}", 2],
+                    // 极限
+                    Lim: ["\\lim_{#1 \\to #2}", 2]
+                }
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"]
+            },
+            displayAlign: "center",
+            displayIndent: "0em"
+        });
+        
+        // 配置完成后的回调
+        MathJax.Hub.Configured();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <script>
         // 设置密码（建议定期更换）
-        const BLOG_PASSWORD = "ziy16107"; // 请修改为你想要的密码
+        const BLOG_PASSWORD = "your_password_2025"; // 请修改为你想要的密码
         
         // 检查是否已经登录
         if (sessionStorage.getItem('blog_authenticated') === 'true') {
@@ -118,13 +203,26 @@
         
         function showContent() {
             document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-            document.body.style.background = '#f5f5f5';
+            document.body.className = 'content-mode';
             
-            // 重新渲染 MathJax
-            if (typeof MathJax !== 'undefined') {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "content"]);
-            }
+            const contentElement = document.getElementById('content');
+            contentElement.classList.add('show');
+            
+            // 确保 MathJax 完全加载后再渲染
+            setTimeout(function() {
+                if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+                    console.log('MathJax 重新渲染开始...');
+                    MathJax.Hub.Queue([
+                        "Typeset", 
+                        MathJax.Hub, 
+                        contentElement
+                    ], function() {
+                        console.log('MathJax 渲染完成！');
+                    });
+                } else {
+                    console.log('MathJax 未加载');
+                }
+            }, 100);
         }
         
         // 防止右键和开发者工具（基础保护）
