@@ -11,6 +11,6 @@ title: 个人页面
     <div style="margin-top: 3rem; padding: 2rem; background: #f0f8ff; border-radius: 10px;">
         <h3>📧 联系方式</h3>
         <p>邮箱: your.email@example.com</p>
-        <p>GitHub: <a href="https://github.com/ziqiyang107">@ziqiyang107</a></p>
+        <!-- <p>GitHub: <a href="https://github.com/ziqiyang107">@ziqiyang107</a></p> -->
     </div>
 </div>
