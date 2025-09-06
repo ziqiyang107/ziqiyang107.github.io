@@ -55,4 +55,42 @@ $$
 
 $$
 \dd{f} = \pdv{f}{x}\dd{x} + \pdv{f}{y}\dd{y}
+
+函数 $f: \R^2 \to \R$，其梯度为：
+
+$$
+\grad f = \left(\pdv{f}{x}, \pdv{f}{y}\right)^T
+$$
+
+积分：
+$$
+\Int{a}{b} f(x) \dd{x}
+$$
+
+## 向量和矩阵
+
+设向量 $\vecc{a}, \vecc{b} \in \R^3$，矩阵 $\mat{A} \in \R^{3 \times 3}$：
+
+$$
+\mat{A}\vecc{a} = \vecc{b}
+$$
+
+向量范数：$\norm{\vecc{a}} = \sqrt{\inner{\vecc{a}}{\vecc{a}}}$
+
+
+## 概率论
+
+随机变量 $X$ 的期望和方差：
+
+$$
+\E{X} = \Sum{i=1}{n} x_i \Pr{X = x_i}
+$$
+
+$$
+\Var{X} = \E{X^2} - \left(\E{X}\right)^2
+$$
+
+## 量子力学符号
+
+量子态 $\ket{\psi}$ 和观测算符 $\hat{A}$：
 $$
