@@ -4,6 +4,7 @@ title: "First Math Blog"
 date: 2025-01-15
 ---
 
+# First Math Blog
 
 ## 换行align示例1
 
