@@ -101,6 +101,7 @@ blockquote {
 
 /* 引用样式 */
 .citation {
+    display: inline !important;
     color: #0066cc;
     text-decoration: none;
     font-weight: bold;
@@ -109,6 +110,13 @@ blockquote {
     background-color: #f0f8ff;
     border: 1px solid #e0e8f0;
     transition: background-color 0.2s;
+}
+
+/* 确保包含引用的段落也是正常流 */
+p .citation {
+    display: inline !important;
+    margin: 0;
+    padding: 1px 3px;
 }
 
 .citation:hover {
