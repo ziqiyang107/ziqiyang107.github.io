@@ -110,6 +110,7 @@ blockquote {
     background-color: #f0f8ff;
     border: 1px solid #e0e8f0;
     transition: background-color 0.2s;
+    margin-right: 0;  /* 移除右边空格 */
 }
 
 /* 确保包含引用的段落也是正常流 */
@@ -130,6 +131,7 @@ p .citation {
     background-color: #ffe6e6;
     padding: 1px 3px;
     border-radius: 3px;
+    margin-right: 0;  /* 移除右边空格 */
 }
 
 /* 参考文献区域 */
