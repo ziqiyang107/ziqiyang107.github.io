@@ -109,6 +109,7 @@ blockquote {
     background-color: #f0f8ff;
     border: 1px solid #e0e8f0;
     transition: background-color 0.2s;
+    display: inline-block; /* 避免换行 */
 }
 
 .citation:hover {
