@@ -10,10 +10,10 @@ date: 2025-01-15
 ## 换行align示例
 
 $$
-\begin{align*}
+\begin{align}
 x &= 1+1 \\
 &= 2
-\end{align*}
+\end{align}
 $$
 
 ## 向量运算
