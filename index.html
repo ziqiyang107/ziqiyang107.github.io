@@ -25,7 +25,7 @@ title: 首页
         <article class="post-preview">
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p class="post-meta">发布于: {{ post.date | date: "%Y年%m月%d日" }}</p>
-            <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+            <!-- <p>{{ post.excerpt | strip_html | truncate: 200 }}</p> -->
         </article>
         {% endfor %}
     {% else %}
