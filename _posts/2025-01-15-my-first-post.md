@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First Blog"
+title: "First Math Blog"
 date: 2025-01-15
 ---
 
@@ -91,3 +91,10 @@ $$
 \Var{X} = \E{X^2} - \left(\E{X}\right)^2
 $$
 
+## 量子力学符号
+
+量子态 $\ket{\psi}$ 和观测算符 $\hat{A}$：
+
+$$
+\langle \hat{A} \rangle = \braket{\psi}{\hat{A}|\psi}
+$$
