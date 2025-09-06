@@ -99,3 +99,86 @@ blockquote {
     font-style: italic;
 }
 
+/* 引用样式 */
+.citation {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1px 3px;
+    border-radius: 3px;
+    background-color: #f0f8ff;
+    border: 1px solid #e0e8f0;
+    transition: background-color 0.2s;
+}
+
+.citation:hover {
+    background-color: #e0f0ff;
+    text-decoration: none;
+}
+
+.citation-error {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+/* 参考文献区域 */
+.bibliography {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #fafafa;
+    border-left: 4px solid #0066cc;
+    border-radius: 0 5px 5px 0;
+}
+
+.bibliography h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.references {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+}
+
+.reference-item {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.reference-item .authors {
+    font-weight: 500;
+}
+
+.reference-item .title {
+    font-weight: 600;
+    margin: 0 0.3rem;
+}
+
+.reference-item .title a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.reference-item .title a:hover {
+    text-decoration: underline;
+}
+
+.reference-item em {
+    color: #666;
+}
+
+/* 滚动到引用时的高亮效果 */
+.reference-item:target {
+    background-color: #ffffcc;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
