@@ -1,13 +1,24 @@
 ---
-layout: default
+layout: protected
 title: 首页
 ---
 
 <div class="home">
     <h2>最新文章</h2>
     
-    <!-- 调试信息 - 暂时添加这些来检查 -->
-    <p>文章总数: {{ site.posts.size }}</p>
+    <!-- 详细调试信息 -->
+    <div style="background: #e8f4ff; padding: 1rem; margin: 1rem 0; border-radius: 5px;">
+        <h3>调试信息</h3>
+        <p><strong>文章总数:</strong> {{ site.posts.size }}</p>
+        <p><strong>网站时区:</strong> {{ site.timezone }}</p>
+        <p><strong>当前时间:</strong> {{ site.time }}</p>
+        <p><strong>所有文章:</strong></p>
+        <ul>
+        {% for post in site.posts %}
+            <li>{{ post.title }} - {{ post.date }} - {{ post.path }}</li>
+        {% endfor %}
+        </ul>
+    </div>
     
     {% if site.posts.size > 0 %}
         {% for post in site.posts %}
