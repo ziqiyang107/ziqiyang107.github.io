@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# 阻止搜索引擎爬取和索引
+Crawl-delay: 86400
