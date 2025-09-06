@@ -7,8 +7,16 @@ date: 2025-01-15
 
 # 线性代数示例
 
-## 换行align示例
+## 换行align示例1
 
+$$
+\begin{align}
+x &= 1+1 \\
+&= 2
+\end{align}
+$$
+
+## 换行align示例2
 $$
 \begin{align}
 x &= 1+1 \\
