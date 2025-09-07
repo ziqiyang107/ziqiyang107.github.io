@@ -8,7 +8,7 @@ date: 2025-01-15
 MathJax = {
   tex: {
     macros: {
-      vecx: ["\\boldsymbol{#1}", 1]
+      vec: ["\\boldsymbol{#1}", 1]
     }
   }
 };
@@ -29,7 +29,7 @@ $$
 
 $$
 \begin{align*}
-x &= 1+1 \\
+\vec{x} &= 1+1 \\
 &= 2
 \end{align*}
 $$
