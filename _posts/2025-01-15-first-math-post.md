@@ -18,7 +18,7 @@ $$
 
 $$
 \begin{align*}
-\vec{x} &= 1+1 \\
+x &= 1+1 \\
 &= 2
 \end{align*}
 $$
