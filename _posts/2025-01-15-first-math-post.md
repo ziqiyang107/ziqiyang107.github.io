@@ -3,7 +3,9 @@ layout: post
 title: "First Math Blog"
 date: 2025-01-15
 ---
-
+$$
+\newcommand{\vecx}[1]{\boldsymbol{#1}}
+$$
   
 ## 换行align示例1
 
@@ -18,7 +20,7 @@ $$
 
 $$
 \begin{align*}
-x &= 1+1 \\
+\vecx{x} &= 1+1 \\
 &= 2
 \end{align*}
 $$
