@@ -4,6 +4,18 @@ title: "First Math Blog"
 date: 2025-01-15
 ---
 
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    macros: {
+      vecx: ["\\boldsymbol{#1}", 1]
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
 ## 换行align示例1
 
 $$
