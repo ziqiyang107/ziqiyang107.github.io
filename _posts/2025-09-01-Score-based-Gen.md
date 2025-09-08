@@ -39,4 +39,4 @@ Generative Modeling by estimating gradients of the data distribution
 score-based generative modeling through stochastic differential equations
 
 ---
-{% include bibliography.html keys="neal2011mcmc," %}
+{% include bibliography.html keys="neal2011mcmc,welling2011bayesian" %}
