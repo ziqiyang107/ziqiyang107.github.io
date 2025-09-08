@@ -25,12 +25,12 @@ $$
 
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
 
-<span id="eq:sde"></span>
-$$
-d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t \tag{3}
-$$
+\begin{equation}\label{eq:sde}
+d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t
+\end{equation}
 
 Comparing Equation \eqref{eq:sde} with
+
 
 Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
 
