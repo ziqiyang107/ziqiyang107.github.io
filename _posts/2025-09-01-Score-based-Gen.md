@@ -30,6 +30,7 @@ $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t
 \end{equation}
 $$
+
 Comparing Equation \eqref{eq:sde} with
 
 Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
