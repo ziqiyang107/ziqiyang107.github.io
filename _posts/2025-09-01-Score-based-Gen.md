@@ -18,7 +18,7 @@ If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then 
 
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \tag{1} \\
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \tag{2} \\
 z_t &\sim N(0, \vecI)
 \end{align*}
 $$  
