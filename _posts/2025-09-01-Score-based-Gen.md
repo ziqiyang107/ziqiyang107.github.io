@@ -11,19 +11,16 @@ $$
 \vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla {\vecx}\log{p(\vecx_{t-1})} + \eta_t \\
 \eta_t &\sim N(0, \epsilon \vecI)
 \end{align*}
-$$
-
-If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then we have 
+$$  
+If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then we have  
 $$
 \vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \\
 z_t &\sim N(0, \vecI)
-$$
-
-The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
+$$  
+The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):  
 $$
 d \vecX_t = -\nabla f(\vecX_t) dt + \sqrt{2}d \vecW_t
-$$
-
+$$  
 Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
 
 
