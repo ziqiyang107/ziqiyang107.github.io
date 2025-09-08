@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "First Math Blog"
-date: 2025-01-15
+title: "Scored-based Generative Models"
+date: 2025-09-01
 ---
 
 ## Langevin Dynamics
@@ -20,6 +20,4 @@ Note that Langevin dynamics itself was introduced in~\cite{neal2011mcmc} as a ty
 ## Score Matching
 ### Score-based Generative Models
 Generative Modeling by estimating gradients of the data distribution  
-
-
 score-based generative modeling through stochastic differential equations
