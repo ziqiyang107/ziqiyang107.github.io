@@ -110,80 +110,41 @@
     </div>
 
     <!-- MathJax 配置 - 放在这里确保先加载 -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$','$'], ['\\(','\\)']],
-                displayMath: [['$$','$$'], ['\\[','\\]']],
-                processEscapes: true,
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            },
-            TeX: {
-                equationNumbers: { autoNumber: "AMS" },
-                extensions: ["AMSmath.js", "AMSsymbols.js"],
-                Macros: {
-                    // 向量命令
-                    vecc: ["\\boldsymbol{#1}", 1],
-                    vecv: ["\\boldsymbol{#1}", 1],
-                    veca: ["\\boldsymbol{#1}", 1],
-                    // 常用向量
-                    vzero: "\\boldsymbol{0}",
-                    vone: "\\boldsymbol{1}",
-                    // 矩阵命令
-                    mat: ["\\mathbf{#1}", 1],
-                    // 微分算子
-                    dd: ["\\,\\mathrm{d}#1", 1],
-                    // 偏导数
-                    pdv: ["\\frac{\\partial #1}{\\partial #2}", 2],
-                    // 梯度、散度、旋度
-                    grad: "\\nabla",
-                    dive: "\\nabla \\cdot",
-                    curl: "\\nabla \\times",
-                    // 期望值
-                    E: ["\\mathbb{E}\\left[#1\\right]", 1],
-                    // 概率
-                    Pr: ["\\mathbb{P}\\left(#1\\right)", 1],
-                    // 实数、复数集合
-                    R: "\\mathbb{R}",
-                    C: "\\mathbb{C}",
-                    N: "\\mathbb{N}",
-                    Z: "\\mathbb{Z}",
-                    Q: "\\mathbb{Q}",
-                    // 范数
-                    norm: ["\\left\\|#1\\right\\|", 1],
-                    abs: ["\\left|#1\\right|", 1],
-                    // 内积
-                    inner: ["\\langle #1, #2 \\rangle", 2],
-                    // 求和、积分
-                    Sum: ["\\sum_{#1}^{#2}", 2],
-                    Int: ["\\int_{#1}^{#2}", 2],
-                    // 极限
-                    Lim: ["\\lim_{#1 \\to #2}", 2]
-                }
-            },
-            "HTML-CSS": {
-                availableFonts: ["TeX"]
-            },
-            displayAlign: "center",
-            displayIndent: "0em"
-        });
-        
-        // 给 eqref 的跳转修复锚点
-        MathJax.Hub.Register.MessageHook("End Math", function (msg) {
-          var jax = MathJax.Hub.getJaxFor(msg[1]);
-          if (jax && jax.inputID && jax.root && jax.root.inputID) {
-            var eqnum = document.getElementById("mjx-eqn-" + jax.root.inputID);
-            if (eqnum && eqnum.parentNode) {
-              eqnum.parentNode.id = "mjx-eqn-" + jax.root.inputID;
-            }
-          }
-        });
-        
-        // 配置完成后的回调
-        MathJax.Hub.Configured();
+    <script>
+    MathJax = {
+      tex: {
+        tags: 'ams',   // 支持 \label, \eqref
+        macros: {
+          vecc: ["\\boldsymbol{#1}", 1],
+          vecv: ["\\boldsymbol{#1}", 1],
+          veca: ["\\boldsymbol{#1}", 1],
+          vzero: "\\boldsymbol{0}",
+          vone: "\\boldsymbol{1}",
+          mat: ["\\mathbf{#1}", 1],
+          dd: ["\\,\\mathrm{d}#1", 1],
+          pdv: ["\\frac{\\partial #1}{\\partial #2}", 2],
+          grad: "\\nabla",
+          dive: "\\nabla \\cdot",
+          curl: "\\nabla \\times",
+          E: ["\\mathbb{E}\\left[#1\\right]", 1],
+          Pr: ["\\mathbb{P}\\left(#1\\right)", 1],
+          R: "\\mathbb{R}",
+          C: "\\mathbb{C}",
+          N: "\\mathbb{N}",
+          Z: "\\mathbb{Z}",
+          Q: "\\mathbb{Q}",
+          norm: ["\\left\\|#1\\right\\|", 1],
+          abs: ["\\left|#1\\right|", 1],
+          inner: ["\\langle #1, #2 \\rangle", 2],
+          Sum: ["\\sum_{#1}^{#2}", 2],
+          Int: ["\\int_{#1}^{#2}", 2],
+          Lim: ["\\lim_{#1 \\to #2}", 2]
+        }
+      }
+    };
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
             // 密码的SHA-256哈希值
