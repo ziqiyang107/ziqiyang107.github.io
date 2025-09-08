@@ -168,6 +168,17 @@
             displayIndent: "0em"
         });
         
+        // 给 eqref 的跳转修复锚点
+        MathJax.Hub.Register.MessageHook("End Math", function (msg) {
+          var jax = MathJax.Hub.getJaxFor(msg[1]);
+          if (jax && jax.inputID && jax.root && jax.root.inputID) {
+            var eqnum = document.getElementById("mjx-eqn-" + jax.root.inputID);
+            if (eqnum && eqnum.parentNode) {
+              eqnum.parentNode.id = "mjx-eqn-" + jax.root.inputID;
+            }
+          }
+        });
+        
         // 配置完成后的回调
         MathJax.Hub.Configured();
     </script>
