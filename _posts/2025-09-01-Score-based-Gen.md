@@ -9,7 +9,7 @@ We first start from the discrete Langevin diffusion process for stochastic gradi
 
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla {\vecx}\log{p(\vecx_{t-1})} + \eta_t \numberthis \\
+\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla {\vecx}\log{p(\vecx_{t-1})} + \eta_t \tag{1} \\
 \eta_t &\sim N(0, \epsilon \vecI)
 \end{align*}
 $$
@@ -18,7 +18,7 @@ If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then 
 
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \\
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \tag{1} \\
 z_t &\sim N(0, \vecI)
 \end{align*}
 $$  
