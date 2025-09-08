@@ -8,7 +8,7 @@ date: 2025-09-01
 We first start from the discrete Langevin diffusion process for stochastic gradient update, introduced in {% include cite.html key="welling2011bayesian"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nebla_{\vecx}\log{p(\vecx_{t-1})} + \eta_t \\
+\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla {\vecx}\log{p(\vecx_{t-1})} + \eta_t \\
 \eta_t &\sim N(0, \epsilon \vecI)
 \end{align*}
 $$
