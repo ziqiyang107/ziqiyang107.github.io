@@ -27,6 +27,14 @@ vaswani2017attention:
   booktitle: "Advances in neural information processing systems"
   pages: "5998--6008"
   year: "2017"
+  
+welling2011bayesian:
+  type: "inproceedings"
+  title: "Bayesian learning via stochastic gradient Langevin dynamics"
+  authors: ["Welling, Max", "Teh, Yee W"]
+  booktitle: "Proceedings of the 28th International Conference on Machine Learning (ICML-11)"
+  pages: "681--688"
+  year: "2011"
 
 yu2022surprising:
   type: "article"
