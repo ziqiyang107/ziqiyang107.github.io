@@ -14,7 +14,7 @@ $$
 $$
 If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then we have 
 $$
-\vecx_t &= \vecx_{t-1} + h\nebla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \\
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \\
 \z_t &\sim N(0, \vecI)
 $$
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
