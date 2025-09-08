@@ -27,7 +27,7 @@ The above recurision can be see as the discretization of Langevin diffusion, whi
 
 $$
 d\vecX_t = -\nabla f(\vecX_t) dt + \sqrt{2} d\vecW_t
-$$.
+$$
 
 Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
 
