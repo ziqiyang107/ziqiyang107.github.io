@@ -14,7 +14,7 @@ $$
 \end{align*}
 $$
 
-Note that Langevin dynamics itself was introduced in~\cite{neal2011mcmc} as a type of MCMC technique
+Note that Langevin dynamics itself was introduced in{% include cite.html key="neal2011mcmc" %}as a type of MCMC technique
 
 
 ## Score Matching
