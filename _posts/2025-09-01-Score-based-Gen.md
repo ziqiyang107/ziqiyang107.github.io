@@ -9,7 +9,7 @@ We first start from the discrete Langevin diffusion process for stochastic gradi
 
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla {\vecx}\log{p(\vecx_{t-1})} + \eta_t \tag{1} \\
+\vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla_{\vecx}\log{p(\vecx_{t-1})} + \eta_t \tag{1} \\
 \eta_t &\sim N(0, \epsilon \vecI)
 \end{align*}
 $$
