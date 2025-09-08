@@ -25,10 +25,9 @@ $$
 
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
 
+<span id="eq:sde"></span>
 $$
-\begin{equation}\label{eq:sde}
-d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t
-\end{equation}
+d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t \tag{3}
 $$
 
 Comparing Equation \eqref{eq:sde} with
