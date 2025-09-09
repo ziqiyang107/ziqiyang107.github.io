@@ -3,6 +3,11 @@ layout: post
 title: "Scored-based Generative Models"
 date: 2025-09-01
 ---
+
+$$
+\newcommand{\eqref}[1]{<a href="#eq#1">(\ref{#1})</a>}
+$$
+
 ## Langevin Dynamics
 We first start from the discrete Langevin diffusion process for stochastic gradient update, introduced in {% include cite.html key="welling2011bayesian"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 
@@ -33,6 +38,8 @@ $$
 根据随机微分方程 [(1)](#eq1)
 
 Comparing Equation [**(1)**](#eq1) with
+
+[式(1)](#eq-sde)
 
 
 
