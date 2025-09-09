@@ -33,7 +33,7 @@ $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
 </div>
-Comparing Equation [(3)](#eq3)
+Comparing Equation [(3)](#eq3) 再试试
 
 
 
