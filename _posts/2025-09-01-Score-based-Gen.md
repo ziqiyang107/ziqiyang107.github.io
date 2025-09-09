@@ -31,13 +31,13 @@ The above recurision can be see as the discretization of Langevin diffusion, whi
 <div id="eq3" style="position: relative;">
   
 $$
-d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
+d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t
 $$
 
 <span class="equation-number">(3)</span>
 </div>
 
-Comparing Equation [(3)]
+Comparing Equation [(3)](#eq3)
 
 
 
