@@ -6,6 +6,7 @@ date: 2025-09-01
 ## Langevin Dynamics
 We first start from the discrete Langevin diffusion process for stochastic gradient update, introduced in {% include cite.html key="welling2011bayesian"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 
+<a id="eq1"></a>
 $$
 \begin{align*}
 \vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla_{\vecx}\log{p(\vecx_{t-1})} + \eta_t \tag{1} \\
@@ -28,6 +29,8 @@ The above recurision can be see as the discretization of Langevin diffusion, whi
 $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
+
+根据随机微分方程 [(1)](#eq1)
 
 Comparing Equation [**(1)**](#eq1) with
 
