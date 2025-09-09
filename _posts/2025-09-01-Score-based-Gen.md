@@ -14,6 +14,7 @@ We first start from the discrete Langevin diffusion process for stochastic gradi
 
 <a id="eq1"></a>
 <a id="eq-sde"></a>
+
 $$
 \begin{align*}
 \vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla_{\vecx}\log{p(\vecx_{t-1})} + \eta_t\\
