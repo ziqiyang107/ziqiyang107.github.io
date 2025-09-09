@@ -37,7 +37,7 @@ $$
 <span class="equation-number">(3)</span>
 </div>
 
-Comparing Equation [(3)](#eq3)
+Comparing Equation [(3)]
 
 
 
