@@ -33,7 +33,13 @@ $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
 
-Comparing Equation [(3)](#eq3) with 和
+Comparing Equation [(3)](#eq3) with
+
+<p id="test">这是一个测试段落</p>
+
+一些其他内容...
+
+点击这里跳转到 [测试段落](#test)
 
 
 
