@@ -3,6 +3,9 @@ layout: post
 title: "Scored-based Generative Models"
 date: 2025-09-01
 ---
+$$
+\newcommand{\eqref}[1]{<a href="#eq#1">(\ref{#1})</a>}
+$$
 
 ## Langevin Dynamics
 We first start from the discrete Langevin diffusion process for stochastic gradient update, introduced in {% include cite.html key="welling2011bayesian"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
@@ -25,12 +28,12 @@ $$
 
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
 
-<span id="eq:sde"></span>
+<a id="eq-sde"></a>
 $$
-d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t \tag{3}
+d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}\label{sde}
 $$
 
-Comparing Equation <a href="#eq:sde">(3)</a> with
+Comparing Equation [(3)](#eq-sde) with
 
 
 
