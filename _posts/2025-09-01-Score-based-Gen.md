@@ -21,7 +21,6 @@ $$
 \eta_t &\sim N(0, \epsilon \vecI)
 \end{align*}
 $$
-<div id="eq1" style="height: 10px; margin-top: -10px;"></div>
 
 If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then we have  
 
@@ -37,8 +36,6 @@ The above recurision can be see as the discretization of Langevin diffusion, whi
 $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
-
-根据随机微分方程 [(1)](#eq1)
 
 Comparing Equation [**(1)**](#eq1) with
 
