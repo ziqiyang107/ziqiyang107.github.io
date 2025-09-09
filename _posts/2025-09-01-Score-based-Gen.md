@@ -28,16 +28,16 @@ $$
 
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
 
-<div id="eq1" style="position: relative;">
+<div id="eq3" style="position: relative;">
   
 $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
 
-<span class="equation-number">(1)</span>
+<span class="equation-number">(3)</span>
 </div>
 
-Comparing Equation [(1)](#eq1)
+Comparing Equation [(3)](#eq3)
 
 
 
