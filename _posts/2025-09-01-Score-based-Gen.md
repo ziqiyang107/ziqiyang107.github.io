@@ -41,6 +41,13 @@ Comparing Equation [(3)](#eq3) with
 
 点击这里跳转到 [测试段落](#test)
 
+### Stochastic Differential Equation {#eq3}
+$$
+d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
+$$
+
+Comparing Equation [(3)](#eq3) with
+
 
 
 Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
