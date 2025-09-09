@@ -82,6 +82,30 @@
         .content.show {
             display: block;
         }
+
+        /* 移除公式编号的小点 */
+        .MathJax_Display .MJXc-display {
+            margin: 1em 0;
+        }
+        /* 自定义编号样式 */
+        .equation-number {
+            position: absolute;
+            right: 10px;
+            font-size: 1em;
+            color: #333;
+            font-family: 'Times New Roman', serif;
+        }
+        /* 平滑居中滚动 */
+        html { scroll-behavior: smooth; }
+        :target { 
+            background: linear-gradient(90deg, #fff3cd 0%, transparent 100%);
+            animation: fadeHighlight 3s ease-out;
+        }
+        @keyframes fadeHighlight {
+            0% { background: #fff3cd; }
+            100% { background: transparent; }
+        }
+        
     </style>
 </head>
 <body class="login-mode">
@@ -255,6 +279,18 @@
                     e.preventDefault();
                     alert('此功能已被禁用');
                 }
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('a[href^="#eq"]').forEach(link => {
+                    link.onclick = e => {
+                        e.preventDefault();
+                        const target = document.getElementById(link.href.split('#')[1]);
+                        if (target) {
+                            const y = target.offsetTop - window.innerHeight/2 + target.offsetHeight/2;
+                            window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                    };
+                });
             });
     </script>
 </body>
