@@ -46,4 +46,4 @@ Now it's natural to ask whether the continuous version and the discrete version 
 score-based generative modeling through stochastic differential equations
 
 ---
-{% include bibliography.html keys="chen2014stochastic,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative，welling2011bayesian" %}
+{% include bibliography.html keys="chen2014stochastic,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,welling2011bayesian" %}
