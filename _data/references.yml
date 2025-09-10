@@ -1,3 +1,12 @@
+chen2014stochastic:
+  type: "inproceedings"
+  title: "Stochastic gradient Hamiltonian Monte Carlo"
+  authors: ["Chen, Tianqi", "Fox, Emily", "Guestrin, Carlos"]
+  booktitle: "International Conference on Machine Learning"
+  pages: "1683-1691"
+  year: "2014"
+  organization: "PMLR"
+
 neal2011mcmc:
   type: "article"
   title: "MCMC using Hamiltonian dynamics"
