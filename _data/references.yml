@@ -19,6 +19,18 @@ roberts1996exponential:
   pages: "341-363"
   year: "1996"
 
+roberts1998optimal:
+  type: "article"
+  title: "Optimal scaling of discrete approximations to Langevin diffusions"
+  authors: ["Roberts, Gareth O", "Rosenthal, Jeffrey S"]
+  journal: "Journal of the Royal Statistical Society: Series B (Statistical Methodology)"
+  volume: "60"
+  number: "1"
+  pages: "255-268"
+  year: "1998"
+  publisher: "Wiley Online Library"
+
+
 silver2016mastering:
   type: "article"
   title: "Mastering the game of Go with deep neural networks and tree search"
