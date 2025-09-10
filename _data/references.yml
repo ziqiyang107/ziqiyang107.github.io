@@ -1,7 +1,7 @@
 neal2011mcmc:
   type: "article"
   title: "MCMC using Hamiltonian dynamics"
-  authors: ["Neal, Radford M", "others"]
+  authors: ["Neal, Radford M"]
   journal: "Handbook of Markov Chain Monte Carlo"
   volume: "2"
   number: "11"
