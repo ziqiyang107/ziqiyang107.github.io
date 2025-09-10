@@ -18,7 +18,6 @@ $$
 $$
 
 If we write $\veceta_t = \sqrt{\epsilon}\vecz_t$, and let $\frac{\epsilon}{2}=h$, then we have  
-
 <div id="eq2">
 $$
 \begin{align*}
@@ -27,9 +26,7 @@ $$
 \end{align*}
 $$
 </div>
-
-The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
-
+The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE)
 <div id="eq3">
 $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
