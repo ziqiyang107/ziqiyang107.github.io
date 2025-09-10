@@ -4,7 +4,7 @@ title: "Scored-based Generative Models"
 date: 2025-09-01
 ---
 ## Langevin Dynamics
-We first start from the discrete Langevin diffusion process for stochastic gradient update, introduced in {% include cite.html key="welling2011bayesian"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
+We first start from the discrete Langevin diffusion process in the paper, introduced in {% include cite.html key="song2019generative"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 
 
 <a id="eq1"></a>
@@ -34,13 +34,16 @@ $$
 </div>
 The discrete version Equation [(2)](#eq2) can be obtained from continuous version Equation [(3)](#eq3), by setting time to be $t+h$ and $t$, and use the definition of the Brownian motion $\vecW_t$. Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique.
 
-Now it's natural to ask whether the continuous version and the discrete version converge, the proof of convergence of the continuous version can be found in {% include cite.html key="roberts1996exponential"%}Theorem 2.1, which basically requires $e^{-f}$ suitably smooth. The convergence of the discrete vertion [(2)](#eq2) requires an additional Metropolis-adjusted step {% include cite.html key="neal2011mcmc"%}{% include cite.html key="roberts1998optimal"%}, in order to make sure the discreted version will converge to true density $p$, and this is due to the detailed balance convergence condition in Markov chains. However, in practice, due to its insignificant effect on the convergence, and it's costly to compute, people just ignore the Metropolis correction step {% include cite.html key="chen2014stochastic"%}.
+Now it's natural to ask whether the continuous version and the discrete version converge, the proof of convergence of the continuous version can be found in {% include cite.html key="roberts1996exponential"%}Theorem 2.1, which basically requires $e^{-f}$ suitably smooth. The convergence of the discrete vertion [(2)](#eq2) requires an additional Metropolis-adjusted step {% include cite.html key="neal2011mcmc"%}{% include cite.html key="roberts1998optimal"%}, in order to make sure the discreted version will converge to true density $p$, and this is due to the detailed balance convergence condition in Markov chains. However, in practice, due to its insignificant effect on the convergence, and it's costly to compute, people just ignore the Metropolis correction step {% include cite.html key="chen2014stochastic"%}. The stochastic gradient variant of the langevin dynamics can be found in {% include cite.html key="welling2011bayesian"%}, where authors introduced it to avoid the computation of the gradient on full dataset.
 
 
 ## Score Matching
 ### Score-based Generative Models
-Generative Modeling by estimating gradients of the data distribution  
+
+
+
+
 score-based generative modeling through stochastic differential equations
 
 ---
-{% include bibliography.html keys="chen2014stochastic,neal2011mcmc,roberts1996exponential,roberts1998optimal,welling2011bayesian" %}
+{% include bibliography.html keys="chen2014stochastic,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative，welling2011bayesian" %}
