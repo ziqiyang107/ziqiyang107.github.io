@@ -9,6 +9,16 @@ neal2011mcmc:
   year: "2011"
   publisher: "Chapman and Hall/CRC"
 
+roberts1996exponential:
+  type: "article"
+  title: "Exponential convergence of Langevin distributions and their discrete approximations"
+  authors: ["Roberts, Gareth O", "Tweedie, Richard L"]
+  journal: "Bernoulli"
+  volume: "2"
+  number: "4"
+  pages: "341-363"
+  year: "1996"
+
 silver2016mastering:
   type: "article"
   title: "Mastering the game of Go with deep neural networks and tree search"
