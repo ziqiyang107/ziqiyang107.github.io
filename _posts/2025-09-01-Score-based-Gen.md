@@ -19,12 +19,14 @@ $$
 
 If we write $\eta_t = \sqrt{\epsilon}z_t$, and let $\frac{\epsilon}{2}=h$, then we have  
 
+<div id="eq2">
 $$
 \begin{align*}
 \vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p(\vecx_{t-1})} + \sqrt{2h} z_t  \tag{2} \\
 z_t &\sim N(0, \vecI)
 \end{align*}
-$$  
+$$
+</div>
 
 The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE):
 
@@ -33,7 +35,7 @@ $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
 </div>
-Comparing Equation [(3)](#eq3)
+The discrete version Equation [(2)](#eq2) can be obtained from continuous version Equation [(3)](#eq3), by setting time to be $t+h$ and $t$, and use the definition of the Brownian motion $\vecW_t$. 
 
 
 
