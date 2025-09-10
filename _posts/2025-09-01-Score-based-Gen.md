@@ -35,12 +35,9 @@ $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
 $$
 </div>
-The discrete version Equation [(2)](#eq2) can be obtained from continuous version Equation [(3)](#eq3), by setting time to be $t+h$ and $t$, and use the definition of the Brownian motion $\vecW_t$. 
+The discrete version Equation [(2)](#eq2) can be obtained from continuous version Equation [(3)](#eq3), by setting time to be $t+h$ and $t$, and use the definition of the Brownian motion $\vecW_t$. Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique.
 
-
-
-
-Note that Langevin dynamics itself was introduced in {% include cite.html key="neal2011mcmc"%}as a type of MCMC technique
+Now it's natural to ask whether the continuous version and the discrete version converge, the proof of convergence of the continuous version can be found in {% include cite.html key="roberts1996exponential"%}Theorem 2.1, which basically requires $e^f$ suitably smooth. 
 
 
 ## Score Matching
@@ -49,4 +46,4 @@ Generative Modeling by estimating gradients of the data distribution
 score-based generative modeling through stochastic differential equations
 
 ---
-{% include bibliography.html keys="neal2011mcmc,welling2011bayesian" %}
+{% include bibliography.html keys="neal2011mcmc,roberts1996exponential,welling2011bayesian" %}
