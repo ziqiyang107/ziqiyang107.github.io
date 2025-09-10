@@ -190,20 +190,4 @@ p .citation {
     transition: background-color 0.3s ease;
 }
 
-<script>
-function scrollToReference(refKey) {
-    const element = document.getElementById('ref-' + refKey);
-    if (element) {
-        element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'center'
-        });
-        // 可选：添加高亮效果
-        element.style.backgroundColor = '#ffff99';
-        setTimeout(() => {
-            element.style.backgroundColor = '';
-        }, 2000);
-    }
-}
-</script>
 
