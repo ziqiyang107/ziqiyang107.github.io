@@ -47,7 +47,6 @@ However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to esti
 
 
 ## Score Matching
-### Score-based Generative Models
 
 
 
