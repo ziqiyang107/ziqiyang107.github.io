@@ -7,6 +7,14 @@ chen2014stochastic:
   year: "2014"
   organization: "PMLR"
 
+chewi2025logconcave:
+  type: "unpublished"
+  title: "Log-Concave Sampling"
+  authors: ["Chewi, Sinho"]
+  year: "2025"
+  note: "Version: August 29, 2025"
+  url: "https://chewisinho.github.io/main.pdf"
+
 neal2011mcmc:
   type: "article"
   title: "MCMC using Hamiltonian dynamics"
