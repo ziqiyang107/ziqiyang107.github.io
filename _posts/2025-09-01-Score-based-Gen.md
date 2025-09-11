@@ -4,7 +4,7 @@ title: "Scored-based Generative Models"
 date: 2025-09-01
 ---
 ## Langevin Dynamics
-We first start from the discrete Langevin diffusion process in the paper, introduced in {% include cite.html key="song2019generative"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
+We first start from the discrete \textbf{Langevin Diffusion} process in the paper, introduced in {% include cite.html key="song2019generative"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 
 
 <a id="eq1"></a>
@@ -26,7 +26,7 @@ $$
 \end{align*}
 $$
 </div>
-The above recurision can be see as the discretization of Langevin diffusion, which is defined as the stochastic differential equation(SDE)
+The above recurision can be see as the discretization of Langevin diffusion, which is defined as the \textbf{Stochastic Differential Equation (SDE)}
 <div id="eq3">
 $$
 d\vecX_t = -\nabla f(\vecX_t)\, dt + \sqrt{2}\, d\vecW_t  \tag{3}
@@ -43,7 +43,7 @@ $$
 \vecz_t &\sim N(0, \vecI)
 \end{align*}
 $$
-However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called score matching {% include cite.html key="hyvarinen2005estimation"%}
+However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called \textbf{Score Matching} {% include cite.html key="hyvarinen2005estimation"%}
 
 
 ## Score Matching
