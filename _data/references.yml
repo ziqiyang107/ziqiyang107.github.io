@@ -15,6 +15,15 @@ chewi2025logconcave:
   note: "Version: August 29, 2025"
   url: "https://chewisinho.github.io/main.pdf"
 
+hyvarinen2005estimation:
+  type: "article"
+  title: "Estimation of non-normalized statistical models by score matching"
+  authors: ["Hyvärinen, Aapo", "Dayan, Peter"]
+  journal: "Journal of Machine Learning Research"
+  volume: "6"
+  number: "4"
+  year: "2005"
+
 neal2011mcmc:
   type: "article"
   title: "MCMC using Hamiltonian dynamics"
