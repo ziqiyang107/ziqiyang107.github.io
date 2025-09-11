@@ -36,7 +36,14 @@ The discrete version Equation [(2)](#eq2) can be obtained from continuous versio
 
 Now it's natural to ask whether the continuous version and the discrete version converge, the proof of convergence of the continuous version can be found in {% include cite.html key="roberts1996exponential"%}Theorem 2.1, which basically requires $e^{-f}$ suitably smooth. The convergence of the discrete vertion [(2)](#eq2) requires an additional Metropolis-adjusted step {% include cite.html key="neal2011mcmc"%}{% include cite.html key="roberts1998optimal"%}, in order to make sure the discreted version will converge to true density $p$, and this is due to the detailed balance convergence condition in Markov chains. However, in practice, due to its insignificant effect on the convergence, and it's costly to compute, people just ignore the Metropolis correction step {% include cite.html key="chen2014stochastic"%}. The stochastic gradient variant of the langevin dynamics can be found in {% include cite.html key="welling2011bayesian"%}, where authors introduced it to avoid the computation of the gradient on full dataset in the Bayesian framework.
 
-Although the unadjusted discrete Langevin diffusion is biased, according to the proof in {% include cite.html key="chewi2025logconcave"%}, when the step size $h$ is small and the total iteration number $T$ is large, we can still conclude that $\vecx_T$ will be asymptotically distributed as probability density $p(\vecx)$.
+Although the unadjusted discrete Langevin diffusion is biased, according to the proof in {% include cite.html key="chewi2025logconcave"%}, when the step size $h$ is small and the total iteration number $T$ is large, we can still conclude that $\vecx_T$ will be asymptotically distributed as probability density $p(\vecx)$. Now write $p(\vecx)$ as $p_{data}(\vecx)$, and if we want to generate data samples from this unknown distribution, for example, some face image distribution, using [(2)](#eq2), which now becomes:
+$$
+\begin{align*}
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p_{data}(\vecx_{t-1})} + \sqrt{2h} \vecz_t  \tag{2} \\
+\vecz_t &\sim N(0, \vecI)
+\end{align*}
+$$
+However, $\log{p_{data}()}$ term is still unknown, so we would like to estimate it, and one way to estimate is called score matching {% include cite.html key="hyvarinen2005estimation"%}
 
 
 ## Score Matching
@@ -48,4 +55,4 @@ Although the unadjusted discrete Langevin diffusion is biased, according to the 
 score-based generative modeling through stochastic differential equations
 
 ---
-{% include bibliography.html keys="chen2014stochastic,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,welling2011bayesian" %}
+{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,welling2011bayesian" %}
