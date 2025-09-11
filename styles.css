@@ -20,6 +20,16 @@
 
 .post-content {
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    word-spacing: 0.05em;
+}
+
+/* 在小屏幕上保持左对齐，避免阅读困难 */
+@media (max-width: 768px) {
+    .post-content {
+        text-align: left;
+    }
 }
 
 .post-content h2, .post-content h3 {
