@@ -43,7 +43,7 @@ $$
 \vecz_t &\sim N(0, \vecI)
 \end{align*}
 $$
-However, $\log{p_{data}()}$ term is still unknown, so we would like to estimate it, and one way to estimate is called score matching {% include cite.html key="hyvarinen2005estimation"%}
+However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called score matching {% include cite.html key="hyvarinen2005estimation"%}
 
 
 ## Score Matching
