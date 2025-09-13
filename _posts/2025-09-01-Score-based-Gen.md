@@ -47,7 +47,7 @@ However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to esti
 
 
 ## Score Matching
-Score matching was originally proposed in {% include cite.html key="hyvarinen2005estimation"%}, as a way of estimating non-normalized density models $q(\vecx;\vectheta)$, where $p(vex;\vectheta)=\frac{1}{Z(\vectheta)}q(\vecx;\vectheta)$, and $Z(\vectheta)$ is the normalizing constant. Since $\nabla_{\vecx} \log{p(vex;\vectheta)}=\log{q(vex;\vectheta)}$, the normalizing constant is cancalled. 
+Score matching was originally proposed in {% include cite.html key="hyvarinen2005estimation"%}, as a way of estimating non-normalized density models $q(\vecx;\vectheta)$, where $p(vex;\vectheta)=\frac{1}{Z(\vectheta)}q(\vecx;\vectheta)$, and $Z(\vectheta)$ is the normalizing constant. Since $\nabla_{\vecx} \log{p(vex;\vectheta)}=\log{q(vex;\vectheta)}$, the normalizing constant is cancalled, so that people don't need to know it explicitly, since the integral $Z(\vectheta)=\int_{x \in \mathbb{R}^n} q(\vecx; \vectheta)d\vectheta$ is often hard to compute. 
 
 
 
