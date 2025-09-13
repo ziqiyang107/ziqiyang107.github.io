@@ -49,6 +49,11 @@ However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to esti
 ## Score Matching
 Score matching was originally proposed in {% include cite.html key="hyvarinen2005estimation"%}, as a way of estimating non-normalized density models $q(\vecx;\vectheta)$, where $p(vex;\vectheta)=\frac{1}{Z(\vectheta)}q(\vecx;\vectheta)$, and $Z(\vectheta)$ is the normalizing constant. Since $\nabla_{\vecx} \log{p(vex;\vectheta)}=\log{q(vex;\vectheta)}$, the normalizing constant is cancalled, so that people don't need to know it explicitly, since the integral $Z(\vectheta)=\int_{x \in \mathbb{R}^n} q(\vecx; \vectheta)d\vectheta$ is often hard to compute. 
 
+The idea of score matching is fairly simple, we seek to minimize the objective:
+$$
+\frac{1}{2}\mathbb{E}_{p_{data}(\vecx)}\big[||\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}||_2^2\big]
+$$
+
 
 
 score-based generative modeling through stochastic differential equations
