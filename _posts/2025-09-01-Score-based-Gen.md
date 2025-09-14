@@ -58,7 +58,7 @@ $$
 A simple trick of partial integration can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
 $$
-\mathbb{E}_{p_{data}\,(\vecx)}\Big[tr(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}||\vecs_{\vectheta}(\vecx)||_2^2 \Big]
+\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}||\vecs_{\vectheta}(\vecx)||_2^2 \Big]
 $$
 
 
