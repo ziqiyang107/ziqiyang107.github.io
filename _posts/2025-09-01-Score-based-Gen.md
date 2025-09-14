@@ -55,13 +55,13 @@ $$
 \frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big],
 $$
 
-using a neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
+using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
 $$
 J(\vectheta)=\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}\left\lVert\vecs_{\vectheta}(\vecx)\right\rVert_2^2 \Big]，
 $$
 
-where $\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$ is the Jacobian of the $\vecs_{\vectheta}(\vecx)$. Furthermore, it's shown in {% include cite.html key="hyvarinen2005estimation"%}, that if the parametrized density include the real data density: $p_{data}(\cdot)=p(\cdot; \vectheta^*)$ for some $\vectheta^*$, and with some other regularity conditions, $J(\vectheta) = 0 \Leftrightarrow \vectheta = \vectheta^*$
+where $\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$ is the Jacobian of the $\vecs_{\vectheta}(\vecx)$. Furthermore, it's shown in {% include cite.html key="hyvarinen2005estimation"%}, that if the parametrized density include the real data density: $p_{data}(\cdot)=p(\cdot; \vectheta^*)$ for some $\vectheta^*$, and with some other regularity conditions, $J(\vectheta) = 0 \Leftrightarrow \vectheta = \vectheta^*$. This means if our score network $\vecs_{\vectheta}(\cdot)$ is powerful enough to cover the unknown true data density, and if our optimization algorithms can recover the true minimizer, then the optimized parameters will be the true parameters $\vectheta^*$. 
 
 
 ## score-based generative modeling through stochastic differential equations
