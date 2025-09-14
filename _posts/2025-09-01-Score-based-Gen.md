@@ -52,13 +52,13 @@ Score matching was originally proposed in {% include cite.html key="hyvarinen200
 The idea of score matching is fairly simple, we seek to minimize the objective:
 
 $$
-\frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[||\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}||_2^2\Big]
+\frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\rVert_2^2\Big]
 $$
 
 A simple trick of partial integration can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
 $$
-\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}||\vecs_{\vectheta}(\vecx)||_2^2 \Big]
+\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}\lVert\vecs_{\vectheta}(\vecx)\rVert_2^2 \Big]
 $$
 
 
