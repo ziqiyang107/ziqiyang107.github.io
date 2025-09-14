@@ -7,9 +7,6 @@ date: 2025-09-01
 We first start from the discrete $\textbf{Langevin Diffusion}$ process in the paper, introduced in {% include cite.html key="song2019generative"%}. Suppose we want to sample from a probability density $p(\vecx)$, the following recursion will converge to this distribution
 
 
-<a id="eq1"></a>
-<a id="eq-sde"></a>
-
 $$
 \begin{align*}
 \vecx_t &= \vecx_{t-1} + \frac{\epsilon}{2}\nabla_{\vecx}\log{p(\vecx_{t-1})} + \veceta_t\\
@@ -39,7 +36,7 @@ Now it's natural to ask whether the continuous version and the discrete version 
 Although the unadjusted discrete Langevin diffusion is biased, according to the proof in {% include cite.html key="chewi2025logconcave"%}, when the step size $h$ is small and the total iteration number $T$ is large, we can still conclude that $\vecx_T$ will be asymptotically distributed as probability density $p(\vecx)$. Now write $p(\vecx)$ as $p_{data}(\vecx)$, and if we want to generate data samples from this unknown distribution, for example, some face image distribution, using [(2)](#eq2), which now becomes:
 $$
 \begin{align*}
-\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p_{data}(\vecx_{t-1})} + \sqrt{2h} \vecz_t  \tag{2} \\
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p_{data}(\vecx_{t-1})} + \sqrt{2h} \vecz_t  \tag{4} \\
 \vecz_t &\sim N(0, \vecI)
 \end{align*}
 $$
@@ -57,11 +54,15 @@ $$
 
 using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
+<div id="eq4">
 $$
-J(\vectheta)=\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}\left\lVert\vecs_{\vectheta}(\vecx)\right\rVert_2^2 \Big]，
+J(\vectheta)=\mathbb{E}_{p_{data}\,(\vecx)}\Big[\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) + \frac{1}{2}\left\lVert\vecs_{\vectheta}(\vecx)\right\rVert_2^2 \Big]， \tag{4}
 $$
+</div>
 
 where $\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$ is the Jacobian of the $\vecs_{\vectheta}(\vecx)$. Furthermore, it's shown in {% include cite.html key="hyvarinen2005estimation"%}, that if the parametrized density include the real data density: $p_{data}(\cdot)=p(\cdot \,; \vectheta^{\*})$ for some $\vectheta^{\*}$, and with some other regularity conditions, $J(\vectheta) = 0 \Leftrightarrow \vectheta = \vectheta^{\*}$. This means if our score network $\vecs_{\vectheta}(\cdot)$ is powerful enough to cover the unknown true data density, and if our optimization algorithms can recover the true minimizer, then the optimized parameters will be the true parameters $\vectheta^{\*}$. However, in practice, this may not be true, as there may be several local minimum(see the discussion under Corollary 3 in {% include cite.html key="hyvarinen2005estimation"%} for further details). 
+
+Look at Formula [(4)](#eq4), we can see it no longer depend on the unknown data density, and we can estimate it using samples from data to replace the expectation. 
 
 
 ## score-based generative modeling through stochastic differential equations
