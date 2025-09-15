@@ -76,6 +76,16 @@ song2019generative:
   volume: "32"
   year: "2019"
 
+song2020sliced:
+  type: "inproceedings"
+  title: "Sliced score matching: A scalable approach to density and score estimation"
+  authors: ["Song, Yang", "Garg, Sahaj", "Shi, Jiaxin", "Ermon, Stefano"]
+  booktitle: "Uncertainty in Artificial Intelligence"
+  pages: "574-584"
+  year: "2020"
+  organization: "PMLR"
+
+
 vaswani2017attention:
   type: "inproceedings"
   title: "Attention is all you need"
