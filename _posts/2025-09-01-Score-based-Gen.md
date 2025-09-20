@@ -52,7 +52,7 @@ $$
 \frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big],
 $$
 
-using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
+using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%}can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
 <div id="eq4">
 $$
