@@ -52,7 +52,7 @@ $$
 \frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big],
 $$
 
-using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%}can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
+using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
 <div id="eq4">
 $$
@@ -64,7 +64,7 @@ where $\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$ is the Jacobian of the $\vecs_{\
 
 From Formula [(4)](#eq4), we can see it no longer depend on the unknown data density, and we can estimate it using samples from data to replace the expectation. Recall the above regularity conditions that include $p(\vecx;\vectheta)>0$ for all $\vecx, \vectheta$, if these conditions are satisfied, then if we sampled version of Formula [(4)](#eq4), the estimator obtained is consistent, i.e., it converges in probability to the true value of $\vectheta$ when sample size approaches infinity {% include cite.html key="hyvarinen2005estimation"%}. However, there is another problem of directly applying [(4)](#eq4), the term $\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$, involving a Jacobian term, can be hard to compute when dimension $d$ is large. One natural idea is to use a trace estimator, $E_{p_{\vecv}\, \sim N(\veczero,\, \vecI)}\Big[\vecv^T \nabla_{\vecx}\vecs_{\vectheta}(\vecx) \vecv \Big]$ {% include cite.html key="song2020sliced"%}, to estimate this term, this is known as $\textbf{Hutchinson}$ $\textbf{Trace}$ $\textbf{Estimator}$. 
 
-Now, it looks like we can just replace, but there are some hidden problems that prevent us from doing this directly. Okay
+Now, it looks like we can just replace, but there are some hidden problems that prevent us from doing this directly.
 
 ## score-based generative modeling through stochastic differential equations
 
