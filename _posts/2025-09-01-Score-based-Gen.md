@@ -66,7 +66,7 @@ From Formula [(4)](#eq4), we can see it no longer depend on the unknown data den
 
 Now, it looks like we can just use the trace estimator to replace the trace term in loss [(4)](#eq4), and get $\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) \approx \nabla_{\vecx}\log p_{data}(\vecx)$, and use discrete Langevin diffusion [(3)](#eq3) to generate samples from the real data distribution, but there are some hidden problems that prevent us from doing this directly. 
 
-## score-based generative modeling through stochastic differential equations
+## Score-based Generative Modeling through SDEs
 
 ---
 {% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,welling2011bayesian" %}
