@@ -64,7 +64,7 @@ where $\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$ is the Jacobian of the $\vecs_{\
 
 From Formula [(4)](#eq4), we can see it no longer depend on the unknown data density, and we can estimate it using samples from data to replace the expectation. Recall the above regularity conditions that include $p(\vecx;\vectheta)>0$ for all $\vecx, \vectheta$, if these conditions are satisfied, then if we sampled version of Formula [(4)](#eq4), the estimator obtained is consistent, i.e., it converges in probability to the true value of $\vectheta$ when sample size approaches infinity {% include cite.html key="hyvarinen2005estimation"%}. However, there is another problem of directly applying [(4)](#eq4), the term $\text{tr}(\nabla_{\vecx}\vecs_{\vectheta}(\vecx))$, involving a Jacobian term, can be hard to compute when dimension $d$ is large. One natural idea is to use a trace estimator, $E_{p_{\vecv}\, \sim N(\veczero,\, \vecI)}\Big[\vecv^T \nabla_{\vecx}\vecs_{\vectheta}(\vecx) \vecv \Big]$ {% include cite.html key="song2020sliced"%}, to estimate this term, this is known as $\textbf{Hutchinson}$ $\textbf{Trace}$ $\textbf{Estimator}$. 
 
-Now, it looks like we can just replace, but there are some hidden problems that prevent us from doing this directly. 
+Now, it looks like we can just use the trace estimator to replace the trace term in loss [(4)](#eq4), and get $\nabla_{\vecx}\vecs_{\vectheta}(\vecx)) \approx \nabla_{\vecx}\log p_{data}(\vecx)$, and use discrete Langevin diffusion [(3)](#eq3) to generate samples from the real data distribution, but there are some hidden problems that prevent us from doing this directly. 
 
 ## score-based generative modeling through stochastic differential equations
 
