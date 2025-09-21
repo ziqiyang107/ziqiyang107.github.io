@@ -80,7 +80,7 @@ $$
 \end{align*}
 $$
 </div>
-where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the minimizer $\vecs_{\vectheta^{\*}}(\tilde{\vecx})$ of [(5)](#eq5) satisfies $\vecs_{\vectheta^{\*}}(\tilde{\vecx})=\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx})=\int q_{\sigma}(\tilde{\vecx}|\vecx)p_{data}(\vecx)d\vecx$ almost surely. 
+where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the minimizer $\vecs_{\vectheta^{\*}}(\tilde{\vecx})$ of [(5)](#eq5) satisfies $\vecs_{\vectheta^{\*}}(\tilde{\vecx})$$=\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx})$$=\int q_{\sigma}(\tilde{\vecx}|\vecx)p_{data}(\vecx)d\vecx$ almost surely. 
 
 ## Score-based Generative Modeling through SDEs
 
