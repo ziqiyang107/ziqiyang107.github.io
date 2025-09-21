@@ -76,7 +76,7 @@ $\textbf{Denoising score matching}$ is a variant of the score matching, it compl
 <div id="eq5">
 $$
 \begin{align*}
-\frac{1}{2}\mathbb_{q_{\sigma}(\tilde{\vecx}|\vecx)} \Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx})-\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx}|\vecx) \right\rVert_2^2 \Big]
+\frac{1}{2}\mathbb{E}_{q_{\sigma}(\tilde{\vecx}|\vecx)} \Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx})-\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx}|\vecx) \right\rVert_2^2 \Big]  \tag{5}
 \end{align*}
 $$
 </div>
