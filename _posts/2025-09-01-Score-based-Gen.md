@@ -91,4 +91,4 @@ almost surely. Note that $\vecs_{\vectheta^{\*}}(\tilde{\vecx}) \approx \nabla_{
 ## Score-based Generative Modeling through SDEs
 
 ---
-{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,welling2011bayesian" %}
+{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
