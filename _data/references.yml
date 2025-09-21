@@ -93,7 +93,18 @@ vaswani2017attention:
   booktitle: "Advances in neural information processing systems"
   pages: "5998--6008"
   year: "2017"
-  
+
+vincent2011connection:
+  type: "article"
+  title: "A connection between score matching and denoising autoencoders"
+  authors: ["Vincent, Pascal"]
+  journal: "Neural Computation"
+  volume: "23"
+  number: "7"
+  pages: "1661-1674"
+  year: "2011"
+  publisher: "MIT Press"
+
 welling2011bayesian:
   type: "inproceedings"
   title: "Bayesian learning via stochastic gradient Langevin dynamics"
