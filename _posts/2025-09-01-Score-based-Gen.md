@@ -72,14 +72,15 @@ Now, it looks like we can just use the trace estimator to replace the trace term
 
 From the above analysis, if we perturb the data distribution using a small Gaussian noise, we can alleviate the issue of manifold hypothesis, score estimation will be more stable, but the samples generated using Langevin diffusion will be the slightly perturbed distribution; if we perturb the data using a relatively large Gaussian noise, the data distribution will be more spread out, then we can alleviate the issue of existence of low density region, but samples generated will deviate from the origin data distribution by a large amount, to leverage the benefits of this insight while avoiding its drawbacks, the authors in {% include cite.html key="song2019generative"%} designed a clever approach: combining denoising score matching and annealing. 
 
-$\textbf{Denoising score matching}$ is a variant of the score matching, it completely circumvents the trace term in [(4)](#eq4), and it proposes an equivalent objective function:
+$\textbf{Denoising score matching}$ {% include cite.html key="vincent2011connection"%} is a variant of the score matching, it completely circumvents the trace term in [(4)](#eq4), and it proposes an equivalent objective function:
 <div id="eq5">
 $$
 \begin{align*}
-\frac{1}{2}\mathbb{E}_{q_{\sigma}(\tilde{\vecx}|\vecx)} \Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx})-\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx}|\vecx) \right\rVert_2^2 \Big]  \tag{5}
+\frac{1}{2}\mathbb{E}_{q_{\sigma}(\tilde{\vecx}|\vecx)p_{data}(\vecx)} \Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx})-\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx}|\vecx) \right\rVert_2^2 \Big],  \tag{5}
 \end{align*}
 $$
 </div>
+where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the minimizer $\vecs_{\vectheta^{\*}}(\vecx)$ of [(5)](#eq5) satisfies $\vecs_{\vectheta^{\*}}(\vecx)=\nabla_{\vecx}\log q_{\sigma}(\vecs)=\int q_{\sigma}(\vecx|\vecx_0)p_{data}(\vecx_0)d\vecx_0$ almost surely. 
 
 ## Score-based Generative Modeling through SDEs
 
