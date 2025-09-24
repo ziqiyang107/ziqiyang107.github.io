@@ -51,7 +51,7 @@ Score matching was originally proposed in {% include cite.html key="hyvarinen200
 
 The idea of score matching is fairly simple, we seek to minimize the objective:
 
-<div id="*">
+<div id="eq-star">
 $$
 \frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big], \tag{*}
 $$
@@ -82,7 +82,7 @@ $$
 \end{align*}
 $$
 </div>
-where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the above objective is equivalent to original score matching objective [(*)](#\*), but with $p_{data}$ replaced by $q_{\sigma}$:
+where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the above objective is equivalent to original score matching objective [(*)](#eq-star), but with $p_{data}$ replaced by $q_{\sigma}$:
 
 $$
 \frac{1}{2}\mathbb{E}_{q_{\sigma}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{q_{\sigma}(\vecx)}\right\rVert_2^2\Big],
