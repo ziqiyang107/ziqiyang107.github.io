@@ -51,9 +51,11 @@ Score matching was originally proposed in {% include cite.html key="hyvarinen200
 
 The idea of score matching is fairly simple, we seek to minimize the objective:
 
+<div id="*">
 $$
-\frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big],
+\frac{1}{2}\mathbb{E}_{p_{data}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{p_{data}(\vecx)}\right\rVert_2^2\Big], \tag{*}
 $$
+</div>
 
 using a score neural network $\vecs_{\vectheta}(\cdot): \mathbb{R^d} \rightarrow \mathbb{R^d}$ parametrized by $\vectheta$. A simple trick of partial integration {% include cite.html key="hyvarinen2005estimation"%} can be used to show the above objective, which depends on the unknown data density, can be rewritten as follows:
 
@@ -72,7 +74,7 @@ Now, it looks like we can just use the trace estimator to replace the trace term
 
 From the above analysis, if we perturb the data distribution using a small Gaussian noise, we can alleviate the issue of manifold hypothesis, score estimation will be more stable, but the samples generated using Langevin diffusion will be the slightly perturbed distribution; if we perturb the data using a relatively large Gaussian noise, the data distribution will be more spread out, then we can alleviate the issue of existence of low density region, but samples generated will deviate from the origin data distribution by a large amount, to leverage the benefits of this insight while avoiding its drawbacks, the authors in {% include cite.html key="song2019generative"%} designed a clever approach: combining denoising score matching and annealing, using the following idea introduced in {% include cite.html key="vincent2011connection"%}.
 
-$\textbf{Denoising score matching}$ {% include cite.html key="vincent2011connection"%} is a variant of the score matching, it completely circumvents the trace term in [(4)](#eq4), and it proposes an equivalent objective function:
+$\textbf{Denoising score matching}$ {% include cite.html key="vincent2011connection"%} is a variant of the score matching, it completely circumvents the trace term in [(4)](#eq4), and it proposes an objective:
 <div id="eq5">
 $$
 \begin{align*}
@@ -80,13 +82,21 @@ $$
 \end{align*}
 $$
 </div>
-where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the minimizer of [(5)](#eq5) satisfies 
+where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the above objective is equivalent to original score matching objective [(*)](#*), but with $p_{data}$ replaced by $q_{\sigma}$:
+
+$$
+\frac{1}{2}\mathbb{E}_{q_{\sigma}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{q_{\sigma}(\vecx)}\right\rVert_2^2\Big],
+$$
+
+Now if $q_{\sigma}$ still satisfies regularity conditions discussed under [(4)](#eq4), then we have the minimizer of [(5)](#eq5) satisfies 
 
 $$
 \vecs_{\vectheta^{*}}(\tilde{\vecx})=\nabla_{\tilde{\vecx}}\log q_{\sigma}(\tilde{\vecx}) \overset{\Delta}{=} \nabla_{\tilde{\vecx}}\log \int q_{\sigma}(\tilde{\vecx}|\vecx)p_{data}(\vecx)d\vecx
 $$
 
 almost surely. Note that $\vecs_{\vectheta^{\*}}(\tilde{\vecx}) \approx \nabla_{\tilde{\vecx}}\log p_{data}(\tilde{\vecx})$ only if the noise $\sigma$ is small enough such that $q_{\sigma}(\tilde{\vecx})\approx p_{data}(\tilde{\vecx})$. 
+
+Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$. We then fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. After we optimize this score neural network, we can first generate samples by only a couple of steps using large noise level score network, since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will be estimated more accurately, based on previous score matching regularity conditions discussion, then we slowly anneal down the noise level and get samples from slightly perturbed $q_{\sigma_2}$, and finally to $q_{\sigma_L}$, which is indistinguishable from $p_{data}$, if we choose $\sigma_L$ suitably small. 
 
 
 
