@@ -82,7 +82,7 @@ $$
 \end{align*}
 $$
 </div>
-where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the above objective is equivalent to original score matching objective [(*)](#*), but with $p_{data}$ replaced by $q_{\sigma}$:
+where $q_{\sigma}(\tilde{\vecx}|\vecx)$ is a noise distribution, and $\tilde{\vecx}$ is the noise perturbed data point. It is shown in {% include cite.html key="vincent2011connection"%} that the above objective is equivalent to original score matching objective [(*)](#\*), but with $p_{data}$ replaced by $q_{\sigma}$:
 
 $$
 \frac{1}{2}\mathbb{E}_{q_{\sigma}\,(\vecx)}\Big[\left\lVert\vecs_{\vectheta}(\vecx)-\nabla_{\vecx}\log{q_{\sigma}(\vecx)}\right\rVert_2^2\Big],
