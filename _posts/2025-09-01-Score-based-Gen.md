@@ -96,13 +96,7 @@ $$
 
 almost surely. Note that $\vecs_{\vectheta^{\*}}(\tilde{\vecx}) \approx \nabla_{\tilde{\vecx}}\log p_{data}(\tilde{\vecx})$ only if the noise $\sigma$ is small enough such that $q_{\sigma}(\tilde{\vecx})\approx p_{data}(\tilde{\vecx})$. 
 
-Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. We fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, and we want to make sure:
-
-$$
-\forall\sigma \in \{\sigma_{i}\}_{i=1}^{L}, \text{ we have } \vecs_{\vectheta}(\vecx, \sigma)\approx \nabla_{\vecx}\log q_{\sigma}(\vecx).
-$$
-
-After we optimize this score neural network, we can first generate samples by only a couple of steps using the optimized conditional score network $\vecs_{\vectheta}(\vecx, \sigma_1)$ using large noise level $\sigma_1$:
+Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. We fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, and we want to make sure:$$\forall\sigma \in \{\sigma_{i}\}_{i=1}^{L}$$, we have $$\vecs_{\vectheta}(\vecx, \sigma)\approx \nabla_{\vecx}\log q_{\sigma}(\vecx)$$. After we optimize this score neural network, we can first generate samples by only a couple of steps using the optimized conditional score network $\vecs_{\vectheta}(\vecx, \sigma_1)$ using large noise level $\sigma_1$:
 <div id="eq3-prime">
 $$
 \begin{align*}
@@ -115,13 +109,17 @@ since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will
 
 ## Training Score-based Generative Models
 Choosing the noise distribution $q_{\sigma}(\tilde{\vecx}|\vecx)=\mathcal{N}(\tilde{\vecx}|\vecx, \sigma^2 \vecI)$，for a given noise level $\sigma$, the denoising score matching objective [(5)](#eq5) becomes:
+
 $$
 l(\vectheta; \sigma)=\frac{1}{2} \mathbb{E}_{p_{data}\,(\vecx)}\mathbb{E}_{\tilde{\vecx} \sim \mathcal{N}(\vecx, \sigma^2 \vecI)}\Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx},\sigma)+\frac{\tilde{\vecx}-\vecx}{\sigma^2} \right\rVert_2^2 \Big],
 $$
+
 and if multiple noise level considered, we have a unified objective:
+
 $$
 \mathcal{L}(\vectheta; \{\sigma_{i}\}_{i=1}^{L})=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta; \sigma_i),
 $$
+
 where $\lambda(\sigma_i)>0$
 
 ## Annealed Inference
