@@ -99,7 +99,7 @@ almost surely. Note that $\vecs_{\vectheta^{\*}}(\tilde{\vecx}) \approx \nabla_{
 Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. We fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, and we want to make sure:
 
 $$
-\forall\sigma \in \{\sigma_{i}\}_{i=1}^{L}, \text{we have} \vecs_{\vectheta}(\vecx, \sigma)\approx \nabla_{\vecx}\log q_{\sigma}(\vecx).
+\forall\sigma \in \{\sigma_{i}\}_{i=1}^{L}, \text{ we have } \vecs_{\vectheta}(\vecx, \sigma)\approx \nabla_{\vecx}\log q_{\sigma}(\vecx).
 $$
 
 After we optimize this score neural network, we can first generate samples by only a couple of steps using the optimized conditional score network $\vecs_{\vectheta}(\vecx, \sigma_1)$ using large noise level $\sigma_1$:
