@@ -96,7 +96,7 @@ $$
 
 almost surely. Note that $\vecs_{\vectheta^{\*}}(\tilde{\vecx}) \approx \nabla_{\tilde{\vecx}}\log p_{data}(\tilde{\vecx})$ only if the noise $\sigma$ is small enough such that $q_{\sigma}(\tilde{\vecx})\approx p_{data}(\tilde{\vecx})$. 
 
-Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$. We then fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. After we optimize this score neural network, we can first generate samples by only a couple of steps using the optimized conditional score network $\vecs_{\vectheta}(\vecx, \sigma_1)$ using large noise level $\sigma_1$:
+Suppose we have a sequence of noise levels $\sigma_1 > \sigma_2 > ... >\sigma_L$, and we make the noise $\sigma_1$ large enough to mitigate the effect of manifold hypothesis, and make the noise $\sigma_L$ small enough to let $q_{\sigma_L} \approx p_{data}$, then we will get a sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, this intuition is inspired by simulated annealing. We fit a score network $\vecs_{\vectheta}(\vecx, \sigma)$ which conditions on different noise levels $\sigma_i$'s, and we want to make sure $\any \sigma \in \{\sigma_i\}_{i=1}^L$, we have $\vecs_{\vectheta}(\vecx, \sigma)\approx \nabla_{\vecx}\log q_{\sigma}(\vecx)$. After we optimize this score neural network, we can first generate samples by only a couple of steps using the optimized conditional score network $\vecs_{\vectheta}(\vecx, \sigma_1)$ using large noise level $\sigma_1$:
 <div id="eq3-prime">
 $$
 \begin{align*}
@@ -107,8 +107,10 @@ $$
 </div>
 since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will be estimated more accurately and will be less affected by manifold hypothesis and low data density regions, based on previous score matching regularity conditions discussion. We first get samples from largely perturbed $q_{\sigma_1}$, then we slowly anneal down the noise level, and finally to $q_{\sigma_L}$, which is indistinguishable from $p_{data}$, if we choose $\sigma_L$ sufficiently small. We will elaborate more on this in the later inference phase.
 
-
 ## Training Score-based Generative Models
+
+
+
 
 ## Annealed Inference
 
