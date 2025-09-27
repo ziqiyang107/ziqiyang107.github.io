@@ -117,10 +117,14 @@ since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will
 Choosing the noise distribution $q_{\sigma}(\tilde{\vecx}|\vecx)=\mathcal{N}(\tilde{\vecx}|\vecx, \sigma^2 \vecI)$，for a given noise level $\sigma$, the denoising score matching objective [(5)](#eq5) becomes:
 
 $$
-l(\vectheta; \sigma)=\frac{1}{2} \mathbb{E}_{p_{data}(\vecx)}\mathbb{E}_{\tilde{\vecx} \sim \mathcal{N}(\vecx, \sigma^2 \vecI)}\Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx},\sigma)+\frac{\tilde{\vecx}-\vecx}{\sigma^2} \right\rVert_2^2 \Big]
+l(\vectheta; \sigma)=\frac{1}{2} \mathbb{E}_{p_{data}(\vecx)}\mathbb{E}_{\tilde{\vecx} \sim \mathcal{N}(\vecx, \sigma^2 \vecI)}\Big[\left\lVert \vecs_{\vectheta}(\tilde{\vecx},\sigma)+\frac{\tilde{\vecx}-\vecx}{\sigma^2} \right\rVert_2^2 \Big],
 $$
+and if multiple noise level considered, we have a unified objective:
 
-
+$$
+\mathcal{L}(\vectheta; \{\sigma_{i}\}_{i=1}^{L})=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta; \sigma_i),
+$$
+where $\lambda(\sigma_i)>0$
 
 ## Annealed Inference
 
