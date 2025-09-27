@@ -105,7 +105,7 @@ $$
 \end{align*}
 $$
 </div>
-since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will be estimated more accurately and will be less affected by manifold hypothesis and low data density regions, based on previous score matching regularity conditions discussion. We first get samples from largely perturbed $q_{\sigma_1}$, then we slowly anneal down the noise level, and finally to $q_{\sigma_L}$, which is indistinguishable from $p_{data}$, if we choose $\sigma_L$ sufficiently small. We will elaborate more on this in the later inference phase.
+since the perturbed score function $\nabla_{\vecx}\log q_{\sigma_1}(\vecx)$ will be estimated more accurately and will be less affected by manifold hypothesis and low data density regions, based on previous score matching regularity conditions discussion. We first get samples from largely perturbed $q_{\sigma_1}$, then we slowly anneal down the noise level, and finally to $q_{\sigma_L}$, which is indistinguishable from $p_{data}$, if we choose $\sigma_L$ sufficiently small. We will elaborate more on this in the later inference phase. Choosing the noise distribution $q_{\sigma}(\tilde{\vecx}|\vecx)=\mathcal{N}(\tilde{\vecx}|\vecx, \sigma^2 \vecI)$
 
 ## Training Score-based Generative Models
 
