@@ -120,14 +120,8 @@ $$
 \mathcal{L}(\vectheta; \{\sigma_{i}\}_{i=1}^{L})=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta; \sigma_i),
 $$
 
-where $\lambda(\sigma_i)>0$
+where $\lambda(\sigma_i)>0$, 
 
-$$
-\begin{align}
-\nabla_{\boldsymbol{\theta}} \ell(\boldsymbol{\theta}; \sigma_i) &= \nabla_{\boldsymbol{\theta}} \left{ \frac{1}{2} \mathbb{E}{p{\text{data}}(\mathbf{x})} \mathbb{E}{\tilde{\mathbf{x}} \sim \mathcal{N}(\mathbf{x}, \sigma_i^2 I)} \left[ \left| \mathbf{s}{\boldsymbol{\theta}}(\tilde{\mathbf{x}}, \sigma_i) + \frac{\tilde{\mathbf{x}} - \mathbf{x}}{\sigma_i^2} \right|2^2 \right] \right} \
-&= \mathbb{E}{p_{\text{data}}(\mathbf{x})} \mathbb{E}{\tilde{\mathbf{x}} \sim \mathcal{N}(\mathbf{x}, \sigma_i^2 I)} \left[ \left( \mathbf{s}{\boldsymbol{\theta}}(\tilde{\mathbf{x}}, \sigma_i) + \frac{\tilde{\mathbf{x}} - \mathbf{x}}{\sigma_i^2} \right)^T \nabla_{\boldsymbol{\theta}} \mathbf{s}_{\boldsymbol{\theta}}(\tilde{\mathbf{x}}, \sigma_i) \right]
-\end{align}
-$$
 
 ## Annealed Inference
 
