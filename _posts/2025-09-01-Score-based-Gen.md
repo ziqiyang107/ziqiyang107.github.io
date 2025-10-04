@@ -120,7 +120,7 @@ $$
 \mathcal{L}(\vectheta; \{\sigma_{i}\}_{i=1}^{L})=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta; \sigma_i),
 $$
 
-where $\lambda(\sigma_i)>0$, 
+where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural network $\vecs_{\vectheta}$, i.e., for any function $$\{f_i: \mathbb{R}^d \rightarrow \mathbb{R}^d\}_{li=1}^L$$, there exists $\vectheta$ with $\vecs_{\vectheta}(\vecx, \sigma_i)=f_i(\vecx)$ for all $i$, then we have $\vectheta^*$ is a global minimizer of above unified objective **if and only if** $$\vecs_{\vectheta^{*}}(\vecx, \sigma_i)=\nabla_{\vecx} \log q_{\sigma_i}(\vecx)$$ almost surely for all $$i \in \{1,2,...,L\}$$. 
 
 
 ## Annealed Inference
