@@ -123,6 +123,20 @@ $$
 where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural network $\vecs_{\vectheta}$, i.e., for any function $$\{f_i: \mathbb{R}^d \rightarrow \mathbb{R}^d\}_{i=1}^L$$, there exists $\vectheta$ with $\vecs_{\vectheta}(\vecx, \sigma_i)=f_i(\vecx)$ for all $i$, then we have $\vectheta^*$ is a global minimizer of above unified objective **if and only if** $$\vecs_{\vectheta^{*}}(\vecx, \sigma_i)=\nabla_{\vecx} \log q_{\sigma_i}(\vecx)$$ almost surely for all $$i \in \{1,2,...,L\}$$. The "if" part is trivial, for the "only if" part, we can prove by the sufficient capacity assumption, and ensure the existence of $\tilde{\vectheta}$ such that $l(\tilde{\vectheta};\sigma_i)=0$ for all $i$, and then $$0 \leq \mathcal{L}(\vectheta^{*};\{\sigma_i\}_{i=1}^L) \leq \mathcal{L}(\tilde{\vectheta};\{\sigma_i\}_{i=1}^L) = 0$$, thus $$\mathcal{L}(\vectheta^{*};\{\sigma_i\}_{i=1}^L)=0=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta^{*}; \sigma_i)$$, and finally all the $$l(\vectheta^{*};\sigma_i)=0$$, because of the positivity of the $\lambda(\sigma_i)$ and the nonnegativity of the $$l(\vectheta^{*};\sigma_i)$$ for all $i$. One possible choice of $\lambda$'s, suggested in {% include cite.html key="song2019generative"%}, is motivated by values of $\lambda(\sigma_i)l(\vectheta;\sigma_i)$ being roughly the same order of magnitude, which eventually gives us $\lambda(\sigma)=\sigma^2$.
 
 ## Annealed Inference
+**Require:** $\{\sigma_i\}_{i=1}^L$, $\epsilon$, $T$.
+
+1. Initialize $\tilde{\mathbf{x}}_0$
+2. **for** $i \leftarrow 1$ to $L$ **do**
+3. $\quad \alpha_i \leftarrow \epsilon \cdot \sigma_i^2/\sigma_L^2$ $\triangleright$ $\alpha_i$ is the step size.
+4. $\quad$ **for** $t \leftarrow 1$ to $T$ **do**
+5. $\quad\quad$ Draw $\mathbf{z}_t \sim \mathcal{N}(0, I)$
+6. $\quad\quad \tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$
+7. $\quad$ **end for**
+8. $\quad \tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$
+9. **end for**
+
+**return** $\tilde{\mathbf{x}}_T$
+
 
 ## Score-based Generative Modeling through SDEs
 
