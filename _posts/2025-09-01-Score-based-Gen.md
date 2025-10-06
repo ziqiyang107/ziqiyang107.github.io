@@ -123,7 +123,7 @@ $$
 where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural network $\vecs_{\vectheta}$, i.e., for any function $$\{f_i: \mathbb{R}^d \rightarrow \mathbb{R}^d\}_{i=1}^L$$, there exists $\vectheta$ with $\vecs_{\vectheta}(\vecx, \sigma_i)=f_i(\vecx)$ for all $i$, then we have $\vectheta^*$ is a global minimizer of above unified objective **if and only if** $$\vecs_{\vectheta^{*}}(\vecx, \sigma_i)=\nabla_{\vecx} \log q_{\sigma_i}(\vecx)$$ almost surely for all $$i \in \{1,2,...,L\}$$. The "if" part is trivial, for the "only if" part, we can prove by the sufficient capacity assumption, and ensure the existence of $\tilde{\vectheta}$ such that $l(\tilde{\vectheta};\sigma_i)=0$ for all $i$, and then $$0 \leq \mathcal{L}(\vectheta^{*};\{\sigma_i\}_{i=1}^L) \leq \mathcal{L}(\tilde{\vectheta};\{\sigma_i\}_{i=1}^L) = 0$$, thus $$\mathcal{L}(\vectheta^{*};\{\sigma_i\}_{i=1}^L)=0=\frac{1}{L}\sum_{i=1}^L \lambda(\sigma_i)l(\vectheta^{*}; \sigma_i)$$, and finally all the $$l(\vectheta^{*};\sigma_i)=0$$, because of the positivity of the $\lambda(\sigma_i)$ and the nonnegativity of the $$l(\vectheta^{*};\sigma_i)$$ for all $i$. One possible choice of $\lambda$'s, suggested in {% include cite.html key="song2019generative"%}, is motivated by values of $\lambda(\sigma_i)l(\vectheta;\sigma_i)$ being roughly the same order of magnitude, which eventually gives us $\lambda(\sigma)=\sigma^2$.
 
 ## Annealed Inference
-**Require:** $\{\sigma_i\}_{i=1}^L$, $\epsilon$, $T$.
+**Require:** $$\{\sigma_i\}_{i=1}^L$$, $\epsilon$, $T$.
 
 1. Initialize $\tilde{\mathbf{x}}_0$
 2. **for** $i \leftarrow 1$ to $L$ **do**
@@ -137,25 +137,6 @@ where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural n
 
 **return** $\tilde{\mathbf{x}}_T$
 
-
-<div style="border: 1px solid black; padding: 15px; margin: 20px 0;">
-<strong>Algorithm 1</strong> Annealed Langevin dynamics.
-<hr style="margin: 10px 0;">
-<p><strong>Require:</strong> $\{\sigma_i\}_{i=1}^L$, $\epsilon$, $T$.</p>
-<ol style="margin-left: 20px;">
-<li>Initialize $\tilde{\mathbf{x}}_0$</li>
-<li><strong>for</strong> $i \leftarrow 1$ to $L$ <strong>do</strong></li>
-<li style="margin-left: 20px;">$\alpha_i \leftarrow \epsilon \cdot \sigma_i^2/\sigma_L^2$ 
-    $\quad \triangleright$ $\alpha_i$ is the step size.</li>
-<li style="margin-left: 20px;"><strong>for</strong> $t \leftarrow 1$ to $T$ <strong>do</strong></li>
-<li style="margin-left: 40px;">Draw $\mathbf{z}_t \sim \mathcal{N}(0, I)$</li>
-<li style="margin-left: 40px;">$\tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$</li>
-<li style="margin-left: 20px;"><strong>end for</strong></li>
-<li style="margin-left: 20px;">$\tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$</li>
-<li><strong>end for</strong></li>
-</ol>
-<p><strong>return</strong> $\tilde{\mathbf{x}}_T$</p>
-</div>
 
 
 ## Score-based Generative Modeling through SDEs
