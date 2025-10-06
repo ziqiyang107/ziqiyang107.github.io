@@ -130,7 +130,7 @@ where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural n
 3. $\quad \alpha_i \leftarrow \epsilon \cdot \sigma_i^2/\sigma_L^2$ $\triangleright$ $\alpha_i$ is the step size.
 4. $\quad$ **for** $t \leftarrow 1$ to $T$ **do**
 5. $\quad\quad$ Draw $\mathbf{z}_t \sim \mathcal{N}(0, I)$
-6. $\quad\quad \tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$
+6. $$\quad\quad \tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$$
 7. $\quad$ **end for**
 8. $\quad \tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$
 9. **end for**
