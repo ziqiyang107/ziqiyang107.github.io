@@ -124,7 +124,7 @@ where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural n
 
 ## Annealed Inference
 **Require:** $$\{\sigma_i\}_{i=1}^L$$, $\epsilon$, $T$.
-
+Given the sigma noise level $\sigma_i$'s, a positve $\epsilon$, and sampling steps $T$, the annealed Langevin dynamics inference is the following, 
 1. Initialize $\tilde{\mathbf{x}}_0$
 2. **for** $i \leftarrow 1$ to $L$ **do**
 3. $\quad \alpha_i \leftarrow \epsilon \cdot \sigma_i^2/\sigma_L^2$ $\triangleright$ $\alpha_i$ is the step size.
@@ -134,7 +134,6 @@ where $\lambda(\sigma_i)>0$. Given the sufficient capacity of the score neural n
 7. $\quad$ **end for**
 8. $\quad \tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$
 9. **end for**
-
 **return** $\tilde{\mathbf{x}}_T$
 
 
