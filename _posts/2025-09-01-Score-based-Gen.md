@@ -133,7 +133,7 @@ Given the sigma noise level $\sigma_i$'s, a positve $\epsilon$, and sampling ste
 6. $$\quad\quad \tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$$
 7. $\quad$ **end for**
 8. $\quad \tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$
-9. **end for**
+9. **end for**  
 **return** $\tilde{\mathbf{x}}_T$
 
 
