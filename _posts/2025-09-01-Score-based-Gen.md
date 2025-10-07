@@ -135,7 +135,7 @@ Given the sigma noise level $\sigma_i$'s, a positve $\epsilon$, and sampling ste
 9. **end for**  
 **return** $\tilde{\mathbf{x}}_T$
 
-We can see from the above algorithm, we sample from the sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}(\vecx)$, with each distribution $q_{\sigma_i}(\vecx)$ being sampled using only $T$ steps and step size $\alpha_i$. For the final $\sigma_L \approx 0$, we have $q_{\sigma_L}(\vecx) \approx p_{data}(\vecx)$
+We can see from the above algorithm, we sample from the sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}(\vecx)$, with each distribution $q_{\sigma_i}(\vecx)$ being sampled using only $T$ steps and gradually reduced step size $\alpha_i$. For the final $\sigma_L \approx 0$, we have $q_{\sigma_L}(\vecx) \approx p_{data}(\vecx)$. The choice of selecting $\alpha_i$'s, given in {% include cite.html key="song2019generative"%}, is $\alpha_i \propto \sigma_i^2$. 
 
 
 
