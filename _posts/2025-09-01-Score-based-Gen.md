@@ -129,13 +129,13 @@ Given the sigma noise level $\sigma_i$'s, a positve $\epsilon$, and sampling ste
 3. $\quad \alpha_i \leftarrow \epsilon \cdot \sigma_i^2/\sigma_L^2$ $\quad\quad\triangleright$ $\alpha_i$ is the step size.
 4. $\quad$ **for** $t \leftarrow 1$ to $T$ **do**
 5. $\quad\quad$ Draw $\mathbf{z}_t \sim \mathcal{N}(0, I)$
-6. $$\quad\quad \tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$$
+6. $\quad\quad$ $$\tilde{\mathbf{x}}_t \leftarrow \tilde{\mathbf{x}}_{t-1} + \frac{\alpha_i}{2}\mathbf{s}_\theta(\tilde{\mathbf{x}}_{t-1}, \sigma_i) + \sqrt{\alpha_i}\mathbf{z}_t$$
 7. $\quad$ **end for**
 8. $\quad \tilde{\mathbf{x}}_0 \leftarrow \tilde{\mathbf{x}}_T$
 9. **end for**  
 **return** $\tilde{\mathbf{x}}_T$
 
-We can see from the above algorithm, we sample from the sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}$, with each distribution $q_{\sigma_i}(\vecx)$ being sampled using only $T$ steps and step size $\alpha_i$. For final $\sigma_L \approx 0$, we have $q_{\sigma_L}(\vecx) \approx p_{data}(\vecx)$
+We can see from the above algorithm, we sample from the sequence of noise-perturbed distributions $q_{\sigma_1}(\vecx), q_{\sigma_2}(\vecx), ..., q_{\sigma_L}(\vecx)$ that converge to true $p_{data}(\vecx)$, with each distribution $q_{\sigma_i}(\vecx)$ being sampled using only $T$ steps and step size $\alpha_i$. For the final $\sigma_L \approx 0$, we have $q_{\sigma_L}(\vecx) \approx p_{data}(\vecx)$
 
 
 
