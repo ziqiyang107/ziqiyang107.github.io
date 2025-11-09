@@ -35,6 +35,15 @@ neal2011mcmc:
   year: "2011"
   publisher: "Chapman and Hall/CRC"
 
+rezende2015variational:
+  type: "inproceedings"
+  title: "Variational inference with normalizing flows"
+  authors: ["Rezende, Danilo", "Mohamed, Shakir"]
+  booktitle: "International Conference on Machine Learning"
+  pages: "1530-1538"
+  year: "2015"
+  organization: "PMLR"
+  
 roberts1996exponential:
   type: "article"
   title: "Exponential convergence of Langevin distributions and their discrete approximations"
