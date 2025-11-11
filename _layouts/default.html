@@ -21,28 +21,14 @@
     <!-- MathJax 配置 -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
-          tex2jax: {
-            inlineMath: [['$','$'], ['\\(','\\)']],
-            displayMath: [['$$','$$'], ['\\[','\\]']],
-            processEscapes: true
-          },
-          TeX: {
-            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
-            equationNumbers: { autoNumber: "AMS" },
-            environments: {
-              theorem: ['\\textbf{Theorem. }', ''],
-              lemma: ['\\textbf{Lemma. }', ''],
-              definition: ['\\textbf{Definition. }', ''],
-              corollary: ['\\textbf{Corollary. }', ''],
-              proposition: ['\\textbf{Proposition. }', ''],
-              remark: ['\\textbf{Remark. }', '']
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
             }
-          }
         });
     </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
     <header>
