@@ -1,83 +1,11 @@
-<!-- 全局数学命令定义 -->
 <div style="display: none;">
 $$
-% 向量命令
-\newcommand{\vecc}[1]{\boldsymbol{#1}}
-\newcommand{\vecv}[1]{\boldsymbol{#1}}
-\newcommand{\veca}[1]{\boldsymbol{#1}}
-\newcommand{\veczero}{\boldsymbol{0}}
 \newcommand{\vecs}{\boldsymbol{s}}
 \newcommand{\vecu}{\boldsymbol{u}}
 \newcommand{\vecv}{\boldsymbol{v}}
-\newcommand{\vecw}{\boldsymbol{w}}
-\newcommand{\vecx}{\boldsymbol{x}}
-\newcommand{\vecz}{\boldsymbol{z}}
 
-\newcommand{\vecI}{\boldsymbol{I}}
-\newcommand{\vecX}{\boldsymbol{X}}
-\newcommand{\vecW}{\boldsymbol{W}}
-
-\newcommand{\veceta}{\boldsymbol{\eta}}
-\newcommand{\vectheta}{\boldsymbol{\theta}}
-\newcommand{\vecmu}{\boldsymbol{\mu}}
-\newcommand{\vecphi}{\boldsymbol{\phi}}
-\newcommand{\vecpsi}{\boldsymbol{\psi}}
-\newcommand{\vecsigma}{\boldsymbol{\sigma}}
-
-\newcommand{\vzero}{\boldsymbol{0}}
-\newcommand{\vone}{\boldsymbol{1}}
-
-% 矩阵命令
-\newcommand{\mat}[1]{\mathbf{#1}}
-\newcommand{\Id}{\mathbf{I}}
-
-% 数学集合
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-
-% 微分算子
-\newcommand{\dd}[1]{\,\mathrm{d}#1}
-\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\ddv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
-
-% 梯度、散度、旋度
-\newcommand{\grad}{\nabla}
-\newcommand{\dive}{\nabla \cdot}
-\newcommand{\curl}{\nabla \times}
-\newcommand{\lapl}{\nabla^2}
-
-% 范数和内积
-\newcommand{\norm}[1]{\left\|#1\right\|}
-\newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\inner}[2]{\langle #1, #2 \rangle}
-
-% 概率统计
-\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
-\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]}
-\newcommand{\Pr}[1]{\mathbb{P}\left(#1\right)}
-
-% 求和、积分、极限
-\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
-\newcommand{\Int}[2]{\int_{#1}^{#2}}
-\newcommand{\Lim}[2]{\lim_{#1 \to #2}}
-
-% 特殊函数
-\newcommand{\sinc}{\mathrm{sinc}}
-\newcommand{\erf}{\mathrm{erf}}
-\newcommand{\sgn}{\mathrm{sgn}}
-
-% 物理学常用
-\newcommand{\ket}[1]{\left|#1\right\rangle}
-\newcommand{\bra}[1]{\left\langle#1\right|}
-\newcommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}
-
-% 复分析
-\newcommand{\Res}[2]{\underset{#1}{\mathrm{Res}}\,#2}
-\newcommand{\Log}{\mathrm{Log}}
-\newcommand{\Arg}{\mathrm{Arg}}
+% 定理环境标题命令
+\newcommand{\thmtitle}[2]{\textbf{#1}\if\relax\detokenize{#2}\relax\else\textbf{ (#2)}\fi}
 $$
 </div>
 
@@ -130,4 +58,91 @@ $$
 .theorem-env .theorem-content {
     color: #34495e;
 }
+
+/* Proof 折叠样式 */
+.proof-container {
+    margin-top: 1em;
+    border-top: 1px dashed #bdc3c7;
+    padding-top: 0.8em;
+}
+
+.proof-toggle {
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.3em 0;
+    transition: color 0.2s;
+}
+
+.proof-toggle:hover {
+    color: #2c3e50;
+}
+
+.proof-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.proof-arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.proof-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.proof-content.show {
+    max-height: 2000px; /* 足够大以容纳内容 */
+    opacity: 1;
+    margin-top: 0.8em;
+}
+
+.proof-content-inner {
+    padding: 0.8em;
+    background-color: #ffffff;
+    border-left: 3px solid #95a5a6;
+    border-radius: 3px;
+    color: #2c3e50;
+}
+
+.proof-end {
+    text-align: right;
+    margin-top: 0.5em;
+    color: #7f8c8d;
+}
+
+.proof-end::after {
+    content: "∎";
+    font-weight: bold;
+    margin-left: 0.3em;
+}
 </style>
+
+<script>
+function toggleProof(element) {
+    const proofContent = element.nextElementSibling;
+    const arrow = element.querySelector('.proof-arrow');
+    
+    if (proofContent.classList.contains('show')) {
+        proofContent.classList.remove('show');
+        arrow.classList.remove('expanded');
+    } else {
+        proofContent.classList.add('show');
+        arrow.classList.add('expanded');
+        
+        // 触发 MathJax 重新渲染证明部分
+        if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, proofContent]);
+        }
+    }
+}
+</script>
