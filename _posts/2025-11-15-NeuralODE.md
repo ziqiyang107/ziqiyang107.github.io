@@ -62,6 +62,35 @@ $$
 
 </div>
 
+带证明版2：
+
+{% capture theorem_content %}
+设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 是可微函数，则其全导数可以表示为 Jacobian 矩阵：
+$$
+Df(\mathbf{x}) = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+$$
+{% endcapture %}
+
+{% capture theorem_proof %}
+根据多元微积分的定义，函数 $f$ 在点 $\mathbf{x}$ 处可微意味着存在线性映射 $L: \mathbb{R}^n \to \mathbb{R}^m$ 使得：
+$$
+f(\mathbf{x} + \mathbf{h}) = f(\mathbf{x}) + L(\mathbf{h}) + o(\|\mathbf{h}\|)
+$$
+
+这个线性映射 $L$ 就是全导数 $Df(\mathbf{x})$。
+{% endcapture %}
+
+{% include theorem.html 
+   type="theorem" 
+   title="Theorem" 
+   name="Total derivative-Jacobian"
+   content=theorem_content 
+   proof=theorem_proof 
+%}
 
 ## Neural ODEs
 
