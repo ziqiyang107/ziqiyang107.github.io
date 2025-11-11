@@ -4,6 +4,7 @@ title: "Neural Ordinary Differential Equations Explained"
 date: 2025-11-11
 ---
 ## Preliminaries
+
 $$
 \begin{theorem}[Total derivative–Jacobian]
 Let $f:\mathbb{R}^n\to\mathbb{R}^m$ be differentiable.
