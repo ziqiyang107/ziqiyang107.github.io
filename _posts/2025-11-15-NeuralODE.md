@@ -19,6 +19,14 @@ $$
 </div>
 </div>
 
+方式二：
+
+{: .theorem-env .lemma}
+> **Lemma (Schwarz's Theorem)**
+> 
+> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
+> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
+
 ## Neural ODEs
 
 The variational inference technique is used in many places in deep learning and statistics, e.g., famous $\textbf{Variational}$ $\textbf{autoencoder (VAE)}$ and as an extension of $\textbf{Expectation-Maximization}$ $\textbf{(EM) algorithm}$, it serves as an approximation of posterior distribution or is used in deriving the lower bound of the marginal log-likelihood of the observed data. We will give the basic setup for obtaining the lower bound of a marginal log-likelihood $\log p_{\vectheta}(\vecx)$:
