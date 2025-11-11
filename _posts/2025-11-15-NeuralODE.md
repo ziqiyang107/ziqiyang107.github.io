@@ -8,6 +8,8 @@ date: 2025-11-11
 
 {% include math_commands.html %}
 
+行吧
+
 不带证明版：
 {% capture def_content %}
 函数 $f: \mathbb{R} \to \mathbb{R}$ 在点 $x_0$ 处连续，当且仅当：
