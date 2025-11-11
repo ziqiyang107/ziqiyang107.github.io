@@ -4,7 +4,20 @@ title: "Neural Ordinary Differential Equations Explained"
 date: 2025-11-11
 ---
 ## Preliminaries
-**Theorem: Total derivative-Jacobian**  
+
+<div class="theorem-env theorem">
+<div class="theorem-header">Theorem (Total derivative-Jacobian)</div>
+<div class="theorem-content">
+设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 是可微函数，则其全导数可以表示为 Jacobian 矩阵：
+$$
+Df(\mathbf{x}) = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+$$
+</div>
+</div>
 
 ## Neural ODEs
 
