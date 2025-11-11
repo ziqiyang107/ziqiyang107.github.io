@@ -27,6 +27,28 @@ $$
 > 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
 > $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
 
+方式三：
+
+{: .theorem-env .lemma}
+> **Lemma (Schwarz's Theorem)**
+> 
+> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
+> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
+
+<div class="theorem-env theorem">
+<div class="theorem-header">Theorem (Total derivative-Jacobian)</div>
+<div class="theorem-content">
+设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 是可微函数，则其全导数可以表示为 Jacobian 矩阵：
+$$
+Df(\mathbf{x}) = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+$$
+</div>
+</div>
+
 ## Neural ODEs
 
 The variational inference technique is used in many places in deep learning and statistics, e.g., famous $\textbf{Variational}$ $\textbf{autoencoder (VAE)}$ and as an extension of $\textbf{Expectation-Maximization}$ $\textbf{(EM) algorithm}$, it serves as an approximation of posterior distribution or is used in deriving the lower bound of the marginal log-likelihood of the observed data. We will give the basic setup for obtaining the lower bound of a marginal log-likelihood $\log p_{\vectheta}(\vecx)$:
