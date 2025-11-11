@@ -1,0 +1,28 @@
+{% assign type = include.type | default: "theorem" %}
+{% assign title = include.title %}
+{% assign name = include.name %}
+
+<div class="theorem-env {{ type }}">
+  <div class="theorem-header">
+    {{ title }}
+    {% if name %} ({{ name }}){% endif %}
+  </div>
+  <div class="theorem-content">
+    {{ include.content }}
+  </div>
+  
+  {% if include.proof %}
+  <div class="proof-container">
+    <div class="proof-toggle" onclick="toggleProof(this)">
+      <span class="proof-arrow">▶</span>
+      <span>Proof</span>
+    </div>
+    <div class="proof-content">
+      <div class="proof-content-inner">
+        {{ include.proof }}
+        <div class="proof-end"></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
