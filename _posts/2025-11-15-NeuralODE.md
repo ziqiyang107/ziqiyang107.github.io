@@ -67,14 +67,6 @@ $$
 
 During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
 
-<!--
-{: .theorem-env .lemma}
-> **Lemma (Schwarz's Theorem)**
-> 
-> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
-> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
--->
-
 
 ---
 {% include bibliography.html keys="rezende2015variational,silver2016mastering," %}
