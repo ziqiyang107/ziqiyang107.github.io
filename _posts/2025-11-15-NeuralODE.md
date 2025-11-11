@@ -19,35 +19,7 @@ $$
 </div>
 </div>
 
-方式二：
 
-{: .theorem-env .lemma}
-> **Lemma (Schwarz's Theorem)**
-> 
-> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
-> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
-
-方式三：
-
-{: .theorem-env .lemma}
-> **Lemma (Schwarz's Theorem)**
-> 
-> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
-> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
-
-<div class="theorem-env theorem">
-<div class="theorem-header">Theorem (Total derivative-Jacobian)</div>
-<div class="theorem-content">
-设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 是可微函数，则其全导数可以表示为 Jacobian 矩阵：
-$$
-Df(\mathbf{x}) = \begin{bmatrix}
-\frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
-\vdots & \ddots & \vdots \\
-\frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
-\end{bmatrix}
-$$
-</div>
-</div>
 
 ## Neural ODEs
 
@@ -65,8 +37,13 @@ $$
 
 During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
 
-## Alternative Form of Normalizing Flows
-TODO: However, above paper is still confusing, consulting to "The Principles of Diffusion Models", and finish the rest part
+<!--
+{: .theorem-env .lemma}
+> **Lemma (Schwarz's Theorem)**
+> 
+> 如果二阶偏导数连续，则混合偏导数与求导顺序无关：
+> $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
+-->
 
 
 ---
