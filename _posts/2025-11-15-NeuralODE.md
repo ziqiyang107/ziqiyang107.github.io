@@ -6,6 +6,7 @@ date: 2025-11-11
 
 ## Preliminaries
 
+{% include math_commands.html %}
 
 不带证明版：
 {% capture def_content %}
