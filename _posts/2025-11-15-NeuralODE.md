@@ -4,7 +4,7 @@ title: "Neural Ordinary Differential Equations Explained"
 date: 2025-11-11
 ---
 ## Preliminaries
-
+**Theorem: Total derivative-Jacobian**  
 
 ## Neural ODEs
 
