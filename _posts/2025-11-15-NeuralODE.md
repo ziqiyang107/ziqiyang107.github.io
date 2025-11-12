@@ -67,7 +67,7 @@ $$
 \frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \tag{VJP}
 \end{align*}
 $$
-<div>
+</div>
 Above is $\textbf{vector-Jacobian product (VJP)}$, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
 <div id="Backprop">
 $$
@@ -75,7 +75,7 @@ $$
 \frac{\partial y}{\partial x_i}=\sum_{l=1}^m \frac{\partial y}{\partial u_l}\frac{\partial u_l}{\partial x_i} \tag{Backprop}
 \end{align*}
 $$
-<div>
+</div>
 If we view above scalar function $f$ as a loss function, then form [(VJP)](#VJP) and form [(Backprop)](#Backprop) become the $\textbf{Back-propagation algorithm}$
 {% endcapture %}
 
