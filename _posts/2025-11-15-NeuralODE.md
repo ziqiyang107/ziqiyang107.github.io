@@ -78,7 +78,7 @@ $$
 \end{align*}
 $$
 </div>
-If we view above scalar function $f$ as a loss function, then form [(VJP)](#VJP) and form [(Backprop)](#Backprop) become the $\textbf{Back-propagation algorithm}$
+If we view above scalar function $f$ as a loss function, then form (VJP) and form (Backprop) become the $\textbf{Backpropagation algorithm}$
 {% endcapture %}
 
 {% include theorem.html 
