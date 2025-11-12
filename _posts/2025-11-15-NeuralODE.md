@@ -61,18 +61,22 @@ $$
 \frac{\partial (y_1,...,y_k)}{\partial(x_1,...,x_n)}=\frac{\partial (y_1,...,y_k)}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)}.
 $$
 In the special case where k = 1, so that f is a real-valued function, then this formula simplifies even further:
+<div id="VJP">
 $$
 \begin{align*}
-\frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \numberthis \label{Eq: VJP} 
+\frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \tag{VJP}
 \end{align*}
 $$
+<div>
 Above is $\textbf{vector-Jacobian product (VJP)}$, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
+<div id="Backprop">
 $$
 \begin{align*}
-\frac{\partial y}{\partial x_i}=\sum_{l=1}^m \frac{\partial y}{\partial u_l}\frac{\partial u_l}{\partial x_i} \numberthis \label{Eq: Backprop}
+\frac{\partial y}{\partial x_i}=\sum_{l=1}^m \frac{\partial y}{\partial u_l}\frac{\partial u_l}{\partial x_i} \tag{Backprop}
 \end{align*}
 $$
-If we view above scalar function $f$ as a loss function, then form \eqref{Eq: VJP} and form \eqref{Eq: Backprop} become the $\textbf{Back-propagation algorithm}$
+<div>
+If we view above scalar function $f$ as a loss function, then form [(VJP)](#VJP) and form [(Backprop)](#Backprop) become the $\textbf{Back-propagation algorithm}$
 {% endcapture %}
 
 {% include theorem.html 
