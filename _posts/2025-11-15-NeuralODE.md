@@ -66,13 +66,13 @@ $$
 \frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \numberthis \label{Eq: VJP} 
 \end{align*}
 $$
-Above is $\textcolor{red}{\textbf{vector-Jacobian product (VJP)}}$, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
+Above is $\textbf{vector-Jacobian product (VJP)}$, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
 $$
 \begin{align*}
 \frac{\partial y}{\partial x_i}=\sum_{l=1}^m \frac{\partial y}{\partial u_l}\frac{\partial u_l}{\partial x_i} \numberthis \label{Eq: Backprop}
 \end{align*}
 $$
-If we view above scalar function $f$ as a loss function, then form \eqref{Eq: VJP} and form \eqref{Eq: Backprop} become the $\textcolor{red}{\textbf{Back-propagation algorithm}}$
+If we view above scalar function $f$ as a loss function, then form \eqref{Eq: VJP} and form \eqref{Eq: Backprop} become the $\textbf{Back-propagation algorithm}$
 {% endcapture %}
 
 {% include theorem.html 
