@@ -86,7 +86,6 @@ If we view above scalar function $f$ as a loss function, then form [(VJP)](#VJP)
    content=coro_content 
 %}
 
-不带证明版：
 {% capture ex_content %}
 Suppose that $f$ is a function of two variables, $x$ and $y$. If these two variables are independent, so that the domain of $f$ is $\mathbb{R}^2$, then the behavior of $f$ may be understood in terms of its partial derivatives in the $x$ and $y$ directions. However, in some situations, $x$ and $y$ may be dependent. For example, it might happen that $f$ is constrained to a curve $y=y(x)$. In this case, we are actually interested in the behavior of the composite function $f(x,y(x))$. The partial derivative of $f$ with respect to $x$ does not give the true rate of change of $f$ with respect to changing $x$ because changing $x$ necessarily changes $y$. However, the chain rule for the total derivative takes such dependencies into account. Write $\gamma (x)=(x,y(x))$, then the chain rule says
 $$
@@ -111,6 +110,24 @@ This gives a straightforward formula for the derivative of $f(x,y(x))$ in terms 
 %}
 
 
+
+## Neural ODEs
+
+The variational inference technique is used in many places in deep learning and statistics, e.g., famous $\textbf{Variational}$ $\textbf{autoencoder (VAE)}$ and as an extension of $\textbf{Expectation-Maximization}$ $\textbf{(EM) algorithm}$, it serves as an approximation of posterior distribution or is used in deriving the lower bound of the marginal log-likelihood of the observed data. We will give the basic setup for obtaining the lower bound of a marginal log-likelihood $\log p_{\vectheta}(\vecx)$:
+
+<div id="eq1">
+$$
+\begin{align*}
+\log p_{\vectheta}(\vecx) &= \log \int p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
+&= \log \int \frac{q_{\vecphi}(\vecz|\vecx)}{q_{\vecphi}(\vecz|\vecx)} p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
+&\geq \int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
+\end{align*}
+$$
+</div>
+
+During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
+
+<!--
 ===========================================================================
 不带证明版：
 {% capture def_content %}
@@ -128,9 +145,7 @@ $$
 %}
 
 
-
 带证明版：
-
 {% capture theorem_content %}
 设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 是可微函数，则其全导数可以表示为 Jacobian 矩阵：
 $$
@@ -158,23 +173,7 @@ $$
    content=theorem_content 
    proof=theorem_proof 
 %}
-
-## Neural ODEs
-
-The variational inference technique is used in many places in deep learning and statistics, e.g., famous $\textbf{Variational}$ $\textbf{autoencoder (VAE)}$ and as an extension of $\textbf{Expectation-Maximization}$ $\textbf{(EM) algorithm}$, it serves as an approximation of posterior distribution or is used in deriving the lower bound of the marginal log-likelihood of the observed data. We will give the basic setup for obtaining the lower bound of a marginal log-likelihood $\log p_{\vectheta}(\vecx)$:
-
-<div id="eq1">
-$$
-\begin{align*}
-\log p_{\vectheta}(\vecx) &= \log \int p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
-&= \log \int \frac{q_{\vecphi}(\vecz|\vecx)}{q_{\vecphi}(\vecz|\vecx)} p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
-&\geq \int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
-\end{align*}
-$$
-</div>
-
-During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
-
+-->
 
 ---
 {% include bibliography.html keys="rezende2015variational,silver2016mastering," %}
