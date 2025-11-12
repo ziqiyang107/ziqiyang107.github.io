@@ -6,11 +6,11 @@ date: 2025-11-11
 ## Preliminaries
 Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
 {% capture def_content %}
-Let $U \subseteq  \mathbb{R}^n$ be an open subset, then a function $f: U \rightarrow \mathbb{R}^m$ is said to be \textbf{(totally) differentiable} at a point $a \in U$ if there exists a linear transformation $df_a: \mathbb{R}^n \rightarrow \mathbb{R}^m$ such that
+Let $U \subseteq  \mathbb{R}^n$ be an open subset, then a function $f: U \rightarrow \mathbb{R}^m$ is said to be $\textbf{(totally) differentiable}$ at a point $a \in U$ if there exists a linear transformation $df_a: \mathbb{R}^n \rightarrow \mathbb{R}^m$ such that
 $$
 \lim_{x\rightarrow a}\frac{||f(x)-f(a)-df_a(x-a)||}{||x-a||}=0
 $$
-The linear map $df_a$ is called the \textbf{(total) derivative} or \textbf{(total) differential} of $f$ at $a$. Other notations for the total derivative include $D_af$ and $Df(a)$. A function is \textbf{(totally) differentiable} if its total derivative exists at every point in its domain. 
+The linear map $df_a$ is called the $\textbf{(total) derivative}$ or $\textbf{(total) differential}$ of $f$ at $a$. Other notations for the total derivative include $D_af$ and $Df(a)$. A function is $\textbf{(totally) differentiable}$ if its total derivative exists at every point in its domain. 
 {% endcapture %}
 
 {% include theorem.html 
@@ -21,7 +21,7 @@ The linear map $df_a$ is called the \textbf{(total) derivative} or \textbf{(tota
 %}
 
 {% capture th_content %}
-If all the partial derivatives(check partiala derivatives definition) of $f$ at $a$ exist and are continuous in a neighborhood of $a$, then $f$ is differentiable at $a$, when this happens, then in addition, the total derivative of $f$ is the linear transformation corresponding to the \textbf{Jacobian matrix} of partial derivatives at that point
+If all the partial derivatives(check partiala derivatives definition) of $f$ at $a$ exist and are continuous in a neighborhood of $a$, then $f$ is differentiable at $a$, when this happens, then in addition, the total derivative of $f$ is the linear transformation corresponding to the $\textbf{Jacobian matrix}$ of partial derivatives at that point
 {% endcapture %}
 
 {% include theorem.html 
@@ -30,8 +30,8 @@ If all the partial derivatives(check partiala derivatives definition) of $f$ at 
    name="Total derivative-Jacobian"
    content=th_content 
 %}
-Next we talk about multivariate chain rule(without proof), first give an example, and state its corollaries.
 
+Next we talk about multivariate chain rule(without proof), first give an example, and state its corollaries.
 {% capture th_content %}
 Consider differentiable functions $f: \mathbb{R}^m \rightarrow \mathbb{R}^k$ and $g: \mathbb{R}^n \rightarrow \mathbb{R}^m$, and a point $\veca$ in $\mathbb{R}^n$. Let $D_{\veca}g$ denote the total derivative of $g$ at $\veca$ and $D_{g(\veca)}f$ denote the total derivative of $f$ at $g(\veca)$. These two derivatives are linear transformations $\mathbb{R}^n \rightarrow \mathbb{R}^n$ and $\mathbb{R}^m \rightarrow \mathbb{R}^k$, respectively, so they can be composed. The chain rule for total derivatives is that their composite is the total derivative of $f \circ g$ at $\veca$:
 $$
@@ -61,20 +61,24 @@ $$
 \frac{\partial (y_1,...,y_k)}{\partial(x_1,...,x_n)}=\frac{\partial (y_1,...,y_k)}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)}.
 $$
 In the special case where k = 1, so that f is a real-valued function, then this formula simplifies even further:
+$$
 \begin{align*}
 \frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \numberthis \label{Eq: VJP} 
 \end{align*}
+$$$
 Above is \textcolor{red}{\textbf{vector-Jacobian product (VJP)}}, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
+$$
 \begin{align*}
 \frac{\partial y}{\partial x_i}=\sum_{l=1}^m \frac{\partial y}{\partial u_l}\frac{\partial u_l}{\partial x_i} \numberthis \label{Eq: Backprop}
 \end{align*}
+$$
 If we view above scalar function $f$ as a loss function, then form \eqref{Eq: VJP} and form \eqref{Eq: Backprop} become the \textcolor{red}{\textbf{Back-propagation algorithm}}
 {% endcapture %}
 
 {% include theorem.html 
    type="corollary" 
    title="Corollary" 
-   name="连续性"
+   name="Partial form - Backprop"
    content=coro_content 
 %}
 
