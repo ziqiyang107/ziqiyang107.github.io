@@ -109,20 +109,15 @@ This gives a straightforward formula for the derivative of $f(x,y(x))$ in terms 
 
 
 ## Neural ODEs
-
-The variational inference technique is used in many places in deep learning and statistics, e.g., famous $\textbf{Variational}$ $\textbf{autoencoder (VAE)}$ and as an extension of $\textbf{Expectation-Maximization}$ $\textbf{(EM) algorithm}$, it serves as an approximation of posterior distribution or is used in deriving the lower bound of the marginal log-likelihood of the observed data. We will give the basic setup for obtaining the lower bound of a marginal log-likelihood $\log p_{\vectheta}(\vecx)$:
-
 <div id="eq1">
 $$
 \begin{align*}
-\log p_{\vectheta}(\vecx) &= \log \int p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
-&= \log \int \frac{q_{\vecphi}(\vecz|\vecx)}{q_{\vecphi}(\vecz|\vecx)} p_{\vectheta}(\vecx|\vecz) p(\vecz) d\vecz \\
-&\geq \int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
+\int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
 \end{align*}
 $$
 </div>
 
-Equation [(1)](#eq1) During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
+Equation [(1)](#eq1) {% include cite.html key="rezende2015variational"%}.
 
 <!--
 ===========================================================================
