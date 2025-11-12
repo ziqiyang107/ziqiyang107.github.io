@@ -21,7 +21,7 @@ The linear map $df_a$ is called the $\textbf{(total) derivative}$ or $\textbf{(t
 %}
 
 {% capture th_content %}
-If all the partial derivatives(check partiala derivatives definition) of $f$ at $a$ exist and are continuous in a neighborhood of $a$, then $f$ is differentiable at $a$, when this happens, then in addition, the total derivative of $f$ is the linear transformation corresponding to the $\textbf{Jacobian matrix}$ of partial derivatives at that point
+If all the partial derivatives(check partial derivatives definition) of $f$ at $a$ exist and are continuous in a neighborhood of $a$, then $f$ is differentiable at $a$, when this happens, then in addition, the total derivative of $f$ is the linear transformation corresponding to the $\textbf{Jacobian matrix}$ of partial derivatives at that point
 {% endcapture %}
 
 {% include theorem.html 
