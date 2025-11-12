@@ -65,7 +65,7 @@ $$
 \begin{align*}
 \frac{\partial y}{\partial(x_1,...,x_n)}=\frac{\partial y}{\partial(u_1,...,u_m)}\frac{\partial(u_1,...,u_m)}{\partial(x_1,...,x_n)} \numberthis \label{Eq: VJP} 
 \end{align*}
-$$$
+$$
 Above is $\textcolor{red}{\textbf{vector-Jacobian product (VJP)}}$, since the right hand side is a vector times a Jacobian matrix. If we write in terms of each component:
 $$
 \begin{align*}
