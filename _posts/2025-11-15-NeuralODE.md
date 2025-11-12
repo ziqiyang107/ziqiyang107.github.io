@@ -127,7 +127,7 @@ $$
 $$
 </div>
 
-During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
+Equation [(1)](#eq1) During inference, we first sample from prior $\vecz_K \sim p(\vecz_K)=\mathcal{N}(\veczero, \vecI)$, then sample from the trained likelihood/generative model $\vecx \sim p_{\vectheta}(\vecx\|\vecz_K)$. An annealed version of $-$ELBO multiplies a $\beta_t=\min(1, 0.01+t/10000) \in [0,1]$ term in front of the $\log p_{\vectheta}(\vecx\|\vecz_K)$ term, and this modification is said to perform better in {% include cite.html key="rezende2015variational"%}.
 
 <!--
 ===========================================================================
