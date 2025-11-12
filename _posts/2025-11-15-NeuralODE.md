@@ -50,7 +50,7 @@ $$
 {% include theorem.html 
    type="theorem" 
    title="Theorem" 
-   name="Total derivative-Jacobian"
+   name="Multivariate chain rule"
    content=th_content 
 %}
 
