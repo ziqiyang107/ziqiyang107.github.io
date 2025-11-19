@@ -94,12 +94,13 @@ Assuming that $p_t(x) > 0$ for all $x \in \mathbb{R}^d$ and $t \in [0, 1]$, then
 %}
 
 Now consider a particular form for $p_t(x|x_1)$ and its flow $\psi_t(x|x_1)$:
+
 {% capture th_content %}
 <div>
 $$
 \begin{align*}
-p_t(x|x_1) &= \mathcal{N}(x| \mu_t(x_1), \sigma_t(x_1)^2 \vecI), \quad \text{where } \mu_0(x_1)=0, \sigma_0(x_1)=1; \mu_1(x_1)=x_1, \sigma_1(x_1)=\sigma_{min} \\
-\psi_t(x|x_1) &= \sigma_t(x_1)x + \mu_t(x_1) \text{this form can be determined from above } p_t
+p_t(x|x_1) &= \mathcal{N}(x| \mu_t(x_1), \sigma_t(x_1)^2 \vecI),\, \text{ where } \mu_0(x_1)=0, \sigma_0(x_1)=1; \mu_1(x_1)=x_1, \sigma_1(x_1)=\sigma_{min} \\
+\psi_t(x|x_1) &= \sigma_t(x_1)x + \mu_t(x_1)\, \text{ this form can be determined from above } p_t
 \end{align*}
 $$
 </div>
