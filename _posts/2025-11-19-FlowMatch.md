@@ -173,6 +173,7 @@ Good thing about the conditional flow $\psi_t(x)$:
 
 ## Sampling
 first draw a random noise sample $x_0 \sim \mathcal{N}(0, \vecI)$ then compute $\phi_1(x_0)$ by solving the original ODE with the trained VF, $v_t(x, \theta)$, on the interval $t \in [0, 1]$ using an ODE solver:
+
 $$
 \begin{align*}
 \frac{d}{dt}\phi_t(x) &= v_t(\phi_t(x), \theta)  \\
