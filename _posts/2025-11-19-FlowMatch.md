@@ -93,15 +93,34 @@ Assuming that $p_t(x) > 0$ for all $x \in \mathbb{R}^d$ and $t \in [0, 1]$, then
    content=th_content 
 %}
 
-Now consider a particular form for $p_t(x|x_1)$ and the flow $\psi_t(x|x_1)$:
+Now consider a particular form for $p_t(x|x_1)$ and its flow $\psi_t(x|x_1)$:
+{% capture th_content %}
 <div>
 $$
 \begin{align*}
-p_t(x|x_1) &= \mathcal{N}(x| \mu_t(x_1), \sigma_t(x_1)^2 \vecI), \quad \text{ where} \mu_0(x_1)=0, \sigma_0(x_1)=1, \mu_1(x_1)=x_1, \sigma_1(x_1)=\sigma_{min} \\
-\psi_t(x|x_1) &= \sigma_t(x_1)x + \mu_t(x_1)
+p_t(x|x_1) &= \mathcal{N}(x| \mu_t(x_1), \sigma_t(x_1)^2 \vecI), \quad \text{where } \mu_0(x_1)=0, \sigma_0(x_1)=1; \mu_1(x_1)=x_1, \sigma_1(x_1)=\sigma_{min} \\
+\psi_t(x|x_1) &= \sigma_t(x_1)x + \mu_t(x_1) \text{this form can be determined from above } p_t
 \end{align*}
 $$
 </div>
+Then, the unique conditional vector field that defines $\psi_t$ has the form:
+<div>
+$$
+\begin{align*}
+u_t(x|x_1)=\frac{\sigma_t^{'}(x_1)}{\sigma_t(x_1)}(x-\mu_t(x_1))+\mu_t^{'}(x_1)
+\end{align*}
+$$
+</div>
+Consequently, $u_t(x|x_1)$ generates the Gaussian path $p_t(x|x_1)$
+{% endcapture %}
+
+{% include theorem.html 
+   type="theorem" 
+   title="Theorem" 
+   name="Closed form Conditional VF"
+   content=th_content 
+%}
+
 
 
 
