@@ -139,6 +139,14 @@ $$
 where $p(x_0)$ is the standard Gaussian. 
 
 ## Special Instances
+We can choose whatever $\mu_t(x_1)$ and $\sigma_t(x_1)$, as long as they are differentiable and satisfy the bounding conditions. For example in DDPM:
+
+$$
+\begin{align*}
+\mu_t(x_1)=x_1  \\
+\sigma_t(x_1)=\sigma_{1-t}  \quad \text{with }\sigma_0=0 \text{ and }\sigma_1 >> 1
+\end{align*}
+$$
 
 ---
 {% include bibliography.html keys="chen2014stochastic,lipman2022flow" %}
