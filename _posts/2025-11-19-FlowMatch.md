@@ -60,7 +60,23 @@ $$
 If this loss reaches zero, then we can use learned $v_t(x, \theta)$ to generated $p_t(x)$, thus get $p_1(x)$ that is approximately $q(x)$. However, we have no idea of $u_t(x)$ and $p_t$, since it related to intrinsics of training data. The trick is to regress to a conditional vector field $u_t(x|x_1)$, where $x_1$ is a data sample from the training data.
 
 
+## Conditional Flow Matching
+Now consider a second objective:
+<div>
+$$
+\begin{align*}
+L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}||v_t(x)-u_t(x|x_1)||^2
+\end{align*}
+$$
+</div>
+where $p_t(x|x_1)$ is conditional probability path such that:
 
+$$
+\begin{align*}
+p_0(x|x_1) &= p(x)=N(x|0, \vecI) \text{at time }t=0 \\
+p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \text{that concentrates around }q \text{ for some small }\sigma_{min}
+\end{align*}
+$$
 
 
 
