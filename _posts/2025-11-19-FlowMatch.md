@@ -140,5 +140,5 @@ where $p(x_0)$ is the standard Gaussian.
 
 
 ---
-{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave" %}
+{% include bibliography.html keys="chen2014stochastic,lipman2022flow" %}
 
