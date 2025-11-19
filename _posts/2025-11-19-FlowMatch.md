@@ -138,7 +138,7 @@ $$
 </div>
 where $p(x_0)$ is the standard Gaussian. 
 
-
+## Special Instances
 
 ---
 {% include bibliography.html keys="chen2014stochastic,lipman2022flow" %}
