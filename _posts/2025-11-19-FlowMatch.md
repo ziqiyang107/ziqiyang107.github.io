@@ -45,7 +45,7 @@ $$
 We say a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1)}. So the logic is:
 
 $$
-v_t \xRightarrow{\text{determines $\phi_t$ via ODE}} \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t
+v_t  \xrightarrow{\text{determines $\phi_t$ via ODE}}\quad \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t
 $$
 
 For a pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$
@@ -65,7 +65,7 @@ $$
 \end{align*}
 $$
 </div>
-However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called $\textbf{Score matching}$ {% include cite.html key="hyvarinen2005estimation"%}
+{% include cite.html key="hyvarinen2005estimation"%}
 
 distribution, using [(3)](#eq3), which now becomes:
 
