@@ -28,7 +28,6 @@ If we let $\phi_t(x)$ acts upon $x$, where $x \sim p_0$ ($p_0$ is a simple noise
 <div id="eq1">
 $$
 \begin{align*}
-$$
 p_t = [\phi_t]_{*}p_0,
 \end{align*}
 $$
