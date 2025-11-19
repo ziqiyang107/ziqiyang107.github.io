@@ -18,7 +18,7 @@ Notice above $p_t$ and VF $v_t$ are both time-dependent, then we can construct a
 
 $$
 \begin{align*}
-\text{Flow } \phi &: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d \\
+\text{Flow } \phi : [0,1] \times \mathbb{R}^d &\rightarrow \mathbb{R}^d \quad \text{defined via an ODE:}\\
 \frac{d}{dt}\phi_t(x) &= v_t(\phi_t(x))  \\
 \phi_0(x) &= x
 \end{align*}
