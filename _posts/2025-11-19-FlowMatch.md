@@ -10,11 +10,11 @@ $$
 \begin{align*}
 \text{Data point } &x=(x^1,x^2,...,x^d) \in \mathbb{R}^d \\
 \text{Probability density path } &p: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}_{>0} \\
-\text{Vector field } &v: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d
+\text{Vector field(VF) } &v: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d
 \end{align*}
 $$
 
-Now we can construct a time-dependent diffeomorphic map using a vector field $v_t$, via ordinary differential equation (ODE):
+Notice above $p_t$ and VF $v_t$ are both time-dependent, then we can construct a time-dependent diffeomorphic map using a VF $v_t$, via ordinary differential equation (ODE):
 
 $$
 \begin{align*}
