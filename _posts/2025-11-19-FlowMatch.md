@@ -43,9 +43,13 @@ $$
 </div>
 We say a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1). So the logic is:
 
+<div id="eq3">
 $$
-v_t  \xrightarrow{\text{determines $\phi_t$ via ODE}} \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t
+\begin{align*}
+v_t  \xrightarrow{\text{determines $\phi_t$ via ODE}} \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t   \tag{3}
+\end{align*}
 $$
+</div>
 
 For any pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$. In flow matching framework, we want to see if we can flow from a simple noise distribution $p_0 \rightarrow q$, where $q$ is our unknown training data distribution, and we can let $p_1(x) \approx q(x)$, and if we have a VF $u_t(x)$ that generates $p_t$, then we can learn this $u(x)$ by a flow matching loss:
 <div>
