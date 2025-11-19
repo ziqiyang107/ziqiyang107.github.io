@@ -165,6 +165,10 @@ L_{CFM}(\theta)=\mathbb{E}_{t, q(x_1), p(x_0)}\left\| v_t(\psi_t(x_0)) - \big(x_
 \end{align*}
 $$
 </div>
+Good thing about the conditional flow $\psi_t(x)$:
+- Optimal Transport between two Gaussians $p_0(x|x_1)$ and $p_1(x|x_1)$, but not necessarily optimal for marginal VF
+- Particles under the OT displacement map always move in straight line trajectories and with constant speed
+- Conditional VF has a constant direction in time
 
 ---
 {% include bibliography.html keys="chen2014stochastic,lipman2022flow" %}
