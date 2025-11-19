@@ -125,9 +125,10 @@ Consequently, $u_t(x|x_1)$ generates the Gaussian path $p_t(x|x_1)$
 Therefore, we have:
 
 $$
-\frac{d}{dt}\psi_t(x) = u_t(\psi_t(x)|x_1)
+\frac{d}{dt}\psi_t(x) = u_t(\psi_t(x)|x_1).
 $$
-Since $p_t(x|x_1)$ is Gaussian with mean $\mu_t(x_1)$ and standard deviation $\sigma_t(x_1)$, then we use the reparametrization trick and the above ODE, and rewrite [(\*')](#eq-starp):
+
+Since $p_t(x|x_1)$ is a Gaussian with the mean $\mu_t(x_1)$ and the standard deviation $\sigma_t(x_1)$, then we use the reparametrization trick and the above conditional ODE, and can rewrite [(\*')](#eq-starp):
 <div id='eq5'>
 $$
 \begin{align*}
