@@ -159,7 +159,11 @@ $$
 
 Plug this in Equation [(4)](#eq4), we have the final tractable loss for flow matching:
 <div>
+$$
+\begin{align*}
 L_{CFM}(\theta)=\mathbb{E}_{t, q(x_1), p(x_0)}\left\| v_t(\psi_t(x_0)) - \big(x_1-(1-\sigma_{min})x_0 \big) \right\|^2
+\end{align*}
+$$
 </div>
 
 ---
