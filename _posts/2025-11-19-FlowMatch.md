@@ -55,7 +55,7 @@ For any pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ 
 <div id='eq-star'>
 $$
 \begin{align*}
-L_{FM}(\theta)=\mathbb{E}_{t\sim U[0,1], x\sim p_t(x)}||v_t(x, \theta)-u_t(x) ||^2   \tag{*}
+L_{FM}(\theta)=\mathbb{E}_{t\sim U[0,1], x\sim p_t(x)}\left\|v_t(x, \theta)-u_t(x) \right\|^2   \tag{*}
 \end{align*}
 $$
 </div>
@@ -67,7 +67,7 @@ Now consider a second objective:
 <div id='eq-starp'>
 $$
 \begin{align*}
-L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}||v_t(x)-u_t(x|x_1)||^2  \tag{*'}
+L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}\left\|v_t(x)-u_t(x|x_1)\right\|^2  \tag{*'}
 \end{align*}
 $$
 </div>
