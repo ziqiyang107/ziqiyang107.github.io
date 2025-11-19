@@ -42,13 +42,13 @@ $$
 \end{align*}
 $$
 </div>
-We say a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1)}. So the logic is:
+We say a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1). So the logic is:
 
 $$
 v_t  \xrightarrow{\text{determines $\phi_t$ via ODE}}\quad \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t
 $$
 
-For a pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$
+For any pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$
 
 
 
