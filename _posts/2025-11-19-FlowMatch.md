@@ -93,7 +93,7 @@ Assuming that $p_t(x) > 0$ for all $x \in \mathbb{R}^d$ and $t \in [0, 1]$, then
    content=th_content 
 %}
 
-Now consider a particular form for $p_t(x|x_1)$ and its flow $\psi_t(x|x_1)$:
+Now consider a particular form for $$p_t(x|x_1)$$ and its Gaussian conditional flow $$\psi_t(x|x_1)$$:
 
 {% capture th_content %}
 <div>
