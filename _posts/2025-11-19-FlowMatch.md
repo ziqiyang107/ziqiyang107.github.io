@@ -122,12 +122,23 @@ Consequently, $u_t(x|x_1)$ generates the Gaussian path $p_t(x|x_1)$
    content=th_content 
 %}
 
+Therefore, we have:
+
+$$
+\frac{d}{dt}\psi_t(x) = u_t(\psi_t(x)|x_1)
+$$
+Since $p_t(x|x_1)$ is Gaussian with mean $\mu_t(x_1)$ and standard deviation $\sigma_t(x_1)$, then we use the reparametrization trick and the above ODE, and rewrite [(\*')](#eq-starp):
+<div id='eq5'>
+$$
+\begin{align*}
+L_{CFM}(\theta)=\mathbb{E}_{t, q(x_1), p(x_0)}\lvert v_t(\psi_t(x_0))-\frac{d}{dt}\psi_t(x_0) \rvert^2
+\end{align*}
+$$
+</div>
+where $p(x_0)$ is the standard Gaussian. 
 
 
 
 ---
 {% include bibliography.html keys="chen2014stochastic,chewi2025logconcave" %}
-
-
-
 
