@@ -18,7 +18,7 @@ Now we can construct a time-dependent diffeomorphic map using a vector field $v_
 
 $$
 \begin{align*}
-\text{Flow(time-dependent) } &\phi: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d \\
+\text{Flow(time-dependent) } \phi &: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d \\
 \frac{d}{dt}\phi_t(x) &= v_t(\phi_t(x))  \\
 \phi_0(x) &= x
 \end{align*}
