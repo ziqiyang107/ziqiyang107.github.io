@@ -132,7 +132,7 @@ Since $p_t(x|x_1)$ is a Gaussian with the mean $\mu_t(x_1)$ and the standard dev
 <div id='eq5'>
 $$
 \begin{align*}
-L_{CFM}(\theta)=\mathbb{E}_{t, q(x_1), p(x_0)}\lvert v_t(\psi_t(x_0))-\frac{d}{dt}\psi_t(x_0) \rvert^2
+L_{CFM}(\theta)=\mathbb{E}_{t, q(x_1), p(x_0)}\lVert v_t(\psi_t(x_0))-\frac{d}{dt}\psi_t(x_0) \rVert^2
 \end{align*}
 $$
 </div>
