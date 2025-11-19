@@ -24,6 +24,13 @@ hyvarinen2005estimation:
   number: "4"
   year: "2005"
 
+lipman2022flow:
+  type: "article"
+  title: "Flow matching for generative modeling"
+  authors: ["Lipman, Yaron", "Chen, Ricky TQ", "Ben-Hamu, Heli", "Nickel, Maximilian", "Le, Matt"]
+  journal: "arXiv preprint arXiv:2210.02747"
+  year: "2022"
+
 neal2011mcmc:
   type: "article"
   title: "MCMC using Hamiltonian dynamics"
