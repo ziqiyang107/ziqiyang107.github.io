@@ -13,6 +13,7 @@ $$
 \text{Vector field(time-dependent) } &v: [0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d
 \end{align*}
 $$
+
 Now we can construct a time-dependent diffeomorphic map using a vector field $v_t$, via ordinary differential equation (ODE):
 
 $$
