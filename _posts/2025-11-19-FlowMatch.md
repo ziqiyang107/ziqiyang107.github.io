@@ -45,7 +45,7 @@ $$
 We say $\textbf{a VF }$ $v_t$ $\textbf{ generates a probability density path }$ $p_t$ $\textbf{ if its flow }$ $\phi_t$ $\textbf{ satisfies [(1)](#eq1)}$. So the logic is:
 
 $$
-v_t \xRightarrow[]{\text{determines $\phi_t$ via ODE}} \phi_t \xRightarrow[]{\phi_t(x)\sim p_t} p_t
+v_t \xRightarrow{\text{determines $\phi_t$ via ODE}} \phi_t \xrightarrow{\phi_t(x)\sim p_t} p_t
 $$
 
 For a pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$
