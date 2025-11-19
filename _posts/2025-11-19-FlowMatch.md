@@ -80,14 +80,24 @@ p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=11$ concent
 \end{align*}
 $$
 </div>
-for a particular sample $x_1$ from the training data. Above expected loss is easy to estimate as long as we know how to sample from $p_t(x|x_1)$ and compute $u_t(x|x_1)$, a good thing is that above [(*')](#eq-starp) has the same gradients with [(*)](#eq-star)
+for a particular sample $x_1$ from the training data. Above expected loss is easy to estimate as long as we know how to sample from $p_t(x|x_1)$ and compute $u_t(x|x_1)$, a good thing is that above [(*')](#eq-starp) has the same gradients with [(*)](#eq-star), formally　{% include cite.html key="lipman2022flow"%}:
+
+{% capture th_content %}
+Assuming that $p_t(x) > 0$ for all $x \in \mathbb{R}^d$ and $t \in [0, 1]$, then, up to a constant independent of $\theta$, $L_{CFM}$ and $L_{FM}$ are equal. Hence, $\nabla_{\theta} L_{FM}(\theta) = \nabla_{\theta} L_{CFM}(\theta)$
+{% endcapture %}
+
+{% include theorem.html 
+   type="theorem" 
+   title="Theorem" 
+   name="FM CFM equivalence"
+   content=th_content 
+%}
 
 
-{% include cite.html key="hyvarinen2005estimation"%}
 
 
 ---
-{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
+{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave" %}
 
 
 
