@@ -64,19 +64,19 @@ If this loss reaches zero, then we can use learned $v_t(x, \theta)$ to generated
 
 ## Conditional Flow Matching
 Now consider a second objective:
-<div>
+<div id='eq-starp'>
 $$
 \begin{align*}
-L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}||v_t(x)-u_t(x|x_1)||^2
+L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}||v_t(x)-u_t(x|x_1)||^2  \tag{*'}
 \end{align*}
 $$
 </div>
 where $p_t(x|x_1)$ is conditional probability path such that:
-<div id='eq-starp'>
+<div>
 $$
 \begin{align*}
 p_0(x|x_1) &= p(x)=N(x|0, \vecI) \quad \text{ at time }t=0 \\
-p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=11$ concentrates around }x_1 \text{ for some small }\sigma_{min}  \tag{*'}
+p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=11$ concentrates around }x_1 \text{ for some small }\sigma_{min}
 \end{align*}
 $$
 </div>
