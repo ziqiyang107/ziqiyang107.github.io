@@ -15,6 +15,15 @@ chewi2025logconcave:
   note: "Version: August 29, 2025"
   url: "https://chewisinho.github.io/main.pdf"
 
+ho2020denoising:
+  type: "article"
+  title: "Denoising diffusion probabilistic models"
+  authors: ["Ho, Jonathan", "Jain, Ajay", "Abbeel, Pieter"]
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "33"
+  pages: "6840-6851"
+  year: "2020"
+
 hyvarinen2005estimation:
   type: "article"
   title: "Estimation of non-normalized statistical models by score matching"
