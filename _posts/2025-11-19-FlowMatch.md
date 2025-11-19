@@ -76,7 +76,7 @@ where $p_t(x|x_1)$ is conditional probability path such that:
 $$
 \begin{align*}
 p_0(x|x_1) &= p(x)=N(x|0, \vecI) \quad \text{ at time }t=0 \\
-p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=11$ concentrates around }x_1 \text{ for some small }\sigma_{min}
+p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=1$ concentrates around }x_1 \text{ for some small }\sigma_{min}
 \end{align*}
 $$
 </div>
