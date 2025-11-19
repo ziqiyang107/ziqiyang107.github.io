@@ -52,9 +52,11 @@ $$
 </div>
 
 For any pair $\tilde{p}_t$ and $\tilde{v}_t$, the $\textbf{Continuity theorem}$ will decice if $\tilde{v}_t$ can generate $\tilde{p}_t$. In flow matching framework, we want to see if we can flow from a simple noise distribution $p_0 \rightarrow q$, where $q$ is our unknown training data distribution, and we can let $p_1(x) \approx q(x)$, and if we have a VF $u_t(x)$ that generates $p_t$, then we can learn this $u(x)$ by a flow matching loss:
-<div>
+<div id='eq-star'>
 $$
-L_{FM}(\theta)=\mathbb{E}_{t\sim U[0,1], x\sim p_t(x)}||v_t(x, \theta)-u_t(x) ||^2
+\begin{align*}
+L_{FM}(\theta)=\mathbb{E}_{t\sim U[0,1], x\sim p_t(x)}||v_t(x, \theta)-u_t(x) ||^2   \tag{*}
+\end{align*}
 $$
 </div>
 If this loss reaches zero, then we can use learned $v_t(x, \theta)$ to generated $p_t(x)$, thus get $p_1(x)$ that is approximately $q(x)$. However, we have no idea of $u_t(x)$ and $p_t$, since it related to intrinsics of training data. The trick is to regress to a conditional vector field $u_t(x|x_1)$, where $x_1$ is a data sample from the training data.
@@ -70,15 +72,15 @@ L_{CFM}(\theta)=\mathbb{E}_{t \sim U[0,1], x_1 \sim q(x_1), x \sim p_t(x|x_1)}||
 $$
 </div>
 where $p_t(x|x_1)$ is conditional probability path such that:
-<div>
+<div id='eq-starp'>
 $$
 \begin{align*}
 p_0(x|x_1) &= p(x)=N(x|0, \vecI) \quad \text{ at time }t=0 \\
-p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ that concentrates around }x_1 \text{ for some small }\sigma_{min}
+p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ at time $t=11$ concentrates around }x_1 \text{ for some small }\sigma_{min}  \tag{*'}
 \end{align*}
 $$
 </div>
-for a particular sample $x_1$ from the training data. 
+for a particular sample $x_1$ from the training data. Above expected loss is easy to estimate as long as we know how to sample from $p_t(x|x_1)$ and compute $u_t(x|x_1)$, a good thing is that above [(*')](#eq-starp) has the same gradients with [(*)](#eq-star)
 
 
 {% include cite.html key="hyvarinen2005estimation"%}
