@@ -42,7 +42,11 @@ $$
 \end{align*}
 $$
 </div>
-We say $\textbf{a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1)}$
+We say $\textbf{a VF }$v_t$ $\textbf{ generates a probability density path }$ $p_t$ $\textbf{ if its flow }$ $\phi_t$ $\textbf{ satisfies [(1)](#eq1)}$. So the logic is:
+
+$$
+v_t xRightarrow[\text{world}]{\text{hello}} \phi_t xRightarrow[\text{world}]{\text{hello}} p_t
+$$
 
 
 --------------------------
