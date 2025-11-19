@@ -14,7 +14,7 @@ $$
 \end{align*}
 $$
 
-Notice above $p_t$ and VF $v_t$ are both time-dependent, then we can construct a time-dependent diffeomorphic map using a VF $v_t$, via Ordinary differential equation (ODE):
+Notice above $p_t$ and VF $v_t$ are both time-dependent, then we can construct a time-dependent diffeomorphic map using a VF $v_t$, via $\textbf{Ordinary differential equation (ODE)}$:
 
 $$
 \begin{align*}
