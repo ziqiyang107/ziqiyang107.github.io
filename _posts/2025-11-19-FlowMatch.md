@@ -143,8 +143,8 @@ We can choose whatever $\mu_t(x_1)$ and $\sigma_t(x_1)$, as long as they are dif
 
 $$
 \begin{align*}
-\mu_t(x_1)=x_1  \\
-\sigma_t(x_1)=\sigma_{1-t}  \quad \text{with }\sigma_0=0 \text{ and }\sigma_1 >> 1
+\mu_t(x_1)&=x_1  \\
+\sigma_t(x_1)&=\sigma_{1-t}  \quad \text{with }\sigma_0=0 \text{ and }\sigma_1 >> 1
 \end{align*}
 $$
 
@@ -152,8 +152,8 @@ In flow mathcing, authors choose:
 
 $$
 \begin{align*}
-\mu_t(x_1)=tx_1  \\
-\sigma_t(x_1)=1-(1-\sigma_{min})t
+\mu_t(x_1)&=tx_1  \\
+\sigma_t(x_1)&=1-(1-\sigma_{min})t
 \end{align*}
 $$
 
