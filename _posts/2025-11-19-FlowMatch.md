@@ -24,6 +24,26 @@ $$
 \end{align*}
 $$
 
+If we let $\phi_t(x)$ acts upon $x$, where $x \sim p_0$ ($p_0$ is a simple noise distribution), and then let $p_t$ denote the probability density function of $\phi_t(x)$, then this $p_t$ is a probability density path in $t$, we denote the $\textbf{push-forward equation}$:
+<div id="eq1">
+$$
+\begin{align*}
+$$
+p_t = [\phi_t]_{*}p_0,
+\end{align*}
+$$
+</div>
+
+where the push-forward(a.k.a change of variables) operator $*$ is defined by:
+<div id="eq2">
+$$
+\begin{align*}
+[\phi_t]_{*}p_0(x) := p_0(\phi_t^{-1}(x))\text{det}\Big[\frac{\partial \phi_t^{-1}}{\partial x}(x) \Big]
+\end{align*}
+$$
+</div>
+We say $\textbf{a VF $v_t$ generates a probability density path $p_t$ if its flow $\phi_t$ satisfies [(1)](#eq1)}$
+
 
 --------------------------
 
@@ -37,7 +57,7 @@ $$
 </div>
 However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called $\textbf{Score matching}$ {% include cite.html key="hyvarinen2005estimation"%}
 
-distribution, using [(1)](#eq1), which now becomes:
+distribution, using [(3)](#eq3), which now becomes:
 
 ---
 {% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
