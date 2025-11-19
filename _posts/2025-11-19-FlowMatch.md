@@ -24,3 +24,23 @@ $$
 $$
 
 
+--------------------------
+
+<div id="eq3">
+$$
+\begin{align*}
+\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p_{data}(\vecx_{t-1})} + \sqrt{2h} \vecz_t  \tag{3} \\
+\vecz_t &\sim N(0, \vecI)
+\end{align*}
+$$
+</div>
+However, $\log{p_{data}(\cdot)}$ term is still unknown, so we would like to estimate it, and one way to estimate is called $\textbf{Score matching}$ {% include cite.html key="hyvarinen2005estimation"%}
+
+distribution, using [(1)](#eq1), which now becomes:
+
+---
+{% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
+
+
+
+
