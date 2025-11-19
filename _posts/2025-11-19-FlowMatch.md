@@ -53,7 +53,7 @@ $$
 L_{FM}(\theta)=\mathbb{E}_{t\sim U[0,1], x\sim p_t(x)}||v_t(x, \theta)-u_t(x) ||^2
 $$
 </div>
-If this loss reaches zero, then we can use learned $v_t(x, \theta)$ to generated $p_t(x)$, thus get $p_1(x)$ that is approximately $q(x)$. However, we can no idea of $u_t(x)$ and $p_t$, since it related to intrinsics of training data. The trick is to regress to a conditional vector field $u_t(x|x_1)$, where $x_1$ is a data sample from the training data.
+If this loss reaches zero, then we can use learned $v_t(x, \theta)$ to generated $p_t(x)$, thus get $p_1(x)$ that is approximately $q(x)$. However, we have no idea of $u_t(x)$ and $p_t$, since it related to intrinsics of training data. The trick is to regress to a conditional vector field $u_t(x|x_1)$, where $x_1$ is a data sample from the training data.
 
 
 
