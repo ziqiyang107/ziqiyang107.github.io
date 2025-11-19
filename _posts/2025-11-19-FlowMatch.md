@@ -77,22 +77,11 @@ p_0(x|x_1) &= p(x)=N(x|0, \vecI) \quad \text{ at time }t=0 \\
 p_1(x|x_1) &= N(x|x_1, \sigma_{min}^2 \vecI) \quad \text{ that concentrates around }x_1 \text{ for some small }\sigma_{min}
 \end{align*}
 $$
+for a particular sample $x_1$ from the training data. 
 
 
-
---------------------------
-
-<div id="eq3">
-$$
-\begin{align*}
-\vecx_t &= \vecx_{t-1} + h\nabla_{\vecx}\log{p_{data}(\vecx_{t-1})} + \sqrt{2h} \vecz_t  \tag{3} \\
-\vecz_t &\sim N(0, \vecI)
-\end{align*}
-$$
-</div>
 {% include cite.html key="hyvarinen2005estimation"%}
 
-distribution, using [(3)](#eq3), which now becomes:
 
 ---
 {% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
