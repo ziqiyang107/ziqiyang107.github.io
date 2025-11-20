@@ -125,6 +125,11 @@ $$
    content=th_content 
 %}
 
+If we use the neural network parameterized velocity field $\vecv_{\vecphi}(\vecx(t), t)$ to replace above $f$, and we take the integral, then we get:
+
+$$
+\log p_{\vecphi}​(\vecx, T)=\log p_{prior}​(\vecz(0))−\int_0^T \nabla_{\vecz}​\cdot \vecv \vecphi​(\vecz(t),t)dt
+$$
 
 
 
