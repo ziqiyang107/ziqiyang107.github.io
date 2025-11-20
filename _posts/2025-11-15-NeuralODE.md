@@ -107,6 +107,8 @@ This gives a straightforward formula for the derivative of $f(x,y(x))$ in terms 
 %}
 
 
+## Adjoint method
+
 
 ## Neural ODEs
 {% capture th_content %}
@@ -137,6 +139,7 @@ $$
 L_{NODE}(\vecphi) = \mathbb{E}_{\vecx \sim p_{data}}\log p_{\vecphi}(\vecx, T)
 $$
 
+However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$
 
 ----------------------------------------------------------------
 
