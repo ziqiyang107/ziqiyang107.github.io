@@ -108,7 +108,7 @@ This gives a straightforward formula for the derivative of $f(x,y(x))$ in terms 
 
 
 ## Adjoint method
-
+TBD
 
 ## Neural ODEs
 {% capture th_content %}
