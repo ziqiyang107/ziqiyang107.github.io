@@ -59,6 +59,13 @@ neal2011mcmc:
   year: "2011"
   publisher: "Chapman and Hall/CRC"
 
+pontrjagin1962mathematical:
+  type: "book"
+  title: "The Mathematical Theory of Optimal Processes"
+  authors: ["Pontrjagin, L. S."]
+  publisher: "Interscience"
+  year: "1962"
+  
 rezende2015variational:
   type: "inproceedings"
   title: "Variational inference with normalizing flows"
