@@ -139,7 +139,7 @@ $$
 L_{NODE}(\vecphi) = \mathbb{E}_{\vecx \sim p_{data}}\log p_{\vecphi}(\vecx, T)
 $$
 
-However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$
+However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$. We can start from a random data point $\vecx$, and solve the ODE $$\frac{d\vecz}{dt}=\vecv_{\vecphi}(\vecz, t) $$ backward in time from $T$ to $0$, and collect intermediate trajectory values $$\{\vecz(t_i)\}$$. In order to obtain $$\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt$$
 
 ----------------------------------------------------------------
 
