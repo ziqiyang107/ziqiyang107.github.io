@@ -131,6 +131,11 @@ $$
 \log p_{\vecphi}​(\vecx, T)=\log p_{prior}​(\vecz(0))−\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt
 $$
 
+We want to optimize following MLE objective:
+
+$$
+L_{NODE}(\vecphi) = \mathbb{E}_{\vecx \sim p_{data}}\log p_{\vecphi}(\vecx, T)
+$$
 
 
 ----------------------------------------------------------------
