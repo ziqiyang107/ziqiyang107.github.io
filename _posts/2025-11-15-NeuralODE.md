@@ -153,17 +153,6 @@ $$
 
 The generated sample is $\vecx=\vecz(T)$. In {% include cite.html key="song2019generative"%}
 
-----------------------------------------------------------------
-
-<div id="eq1">
-$$
-\begin{align*}
-\int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
-\end{align*}
-$$
-</div>
-
-Equation [(1)](#eq1) {% include cite.html key="chen2018neural"%}, authors use a clever method called $\textbf{adjoint sensitivity method}$ {% include cite.html key="pontrjagin1962mathematical"%} to perform a memory-efficient way to compute the gradient
 
 <!--
 ===========================================================================
@@ -211,6 +200,16 @@ $$
    content=theorem_content 
    proof=theorem_proof 
 %}
+
+<div id="eq1">
+$$
+\begin{align*}
+\int q_{\vecphi}(\vecz|\vecx) \log\frac{p_{\vectheta}(\vecx, \vecz)}{q_{\vecphi}(\vecz|\vecx)} =: \text{ELBO}   \tag{1}
+\end{align*}
+$$
+</div>
+
+Equation [(1)](#eq1) {% include cite.html key="chen2018neural"%}, authors use a clever method called $\textbf{adjoint sensitivity method}$ {% include cite.html key="pontrjagin1962mathematical"%} to perform a memory-efficient way to compute the gradient
 -->
 
 ---
