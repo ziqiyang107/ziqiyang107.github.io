@@ -143,10 +143,8 @@ We can see from the above algorithm, we sample from the sequence of noise-pertur
 
 The intution of above inference procedure is that since $\sigma_1$ is large enough to mitigate the effects of $\textbf{manifold hypothesis}$ and $\textbf{low data density regions}$, score estimation $\vecs_{\vectheta}(\vecx, \sigma_1)$ will be an accurate estimation of $q_{\sigma_1}(\vecx)$, and thus sampling loop for noise level $\sigma_1$ will be faster. Because samples produced using $\sigma_1$ are good samples for $q_{\sigma_1}(\vecx)$, are more likely to be around high density regions for $q_{\sigma_2}(\vecx)$, since $q_{\sigma_1}(\vecx)$ and $q_{\sigma_2}(\vecx)$ are quite similar to each other, these samples will be good initial samples for second noise level $\sigma_2$ loop, and again generate good samples for $q_{\sigma_2}(\vecx)$, and eventually we have good samples from $q_{\sigma_L}(\vecx)$, which is indistinguishable from $p_{data}(\vecx)$
 
-
-
-
 ## Score-based Generative Modeling through SDEs
+TBD
 
 ---
 {% include bibliography.html keys="chen2014stochastic,chewi2025logconcave,hyvarinen2005estimation,neal2011mcmc,roberts1996exponential,roberts1998optimal,song2019generative,song2020sliced,vincent2011connection,welling2011bayesian" %}
