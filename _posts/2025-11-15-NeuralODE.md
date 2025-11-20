@@ -151,7 +151,7 @@ $$
 \frac{d\vecz(t)}{dt}=\vecv_{\vecphi}(\vecz, t) \quad \text{with initial condition }\vecz(0)
 $$
 
-The generated sample is $\vecx=\vecz(T)$.
+The generated sample is $\vecx=\vecz(T)$. In {% include cite.html key="song2019generative"%}
 
 ----------------------------------------------------------------
 
@@ -163,7 +163,7 @@ $$
 $$
 </div>
 
-Equation [(1)](#eq1) {% include cite.html key="rezende2015variational"%}.
+Equation [(1)](#eq1) {% include cite.html key="chen2018neural"%}, authors use a clever method called $\textbf{adjoint sensitivity method}$ {% include cite.html key="pontrjagin1962mathematical"%} to perform a memory-efficient way to compute the gradient
 
 <!--
 ===========================================================================
@@ -214,4 +214,4 @@ $$
 -->
 
 ---
-{% include bibliography.html keys="rezende2015variational,chen2018neural," %}
+{% include bibliography.html keys="rezende2015variational,chen2018neural,pontrjagin1962mathematical" %}
