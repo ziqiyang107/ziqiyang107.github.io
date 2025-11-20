@@ -142,7 +142,7 @@ $$
 However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$. We can start from a random data point $\vecx$, and solve the ODE $$\frac{d\vecz}{dt}=\vecv_{\vecphi}(\vecz, t) $$ backward in time from $T$ to $0$, and collect intermediate trajectory values $$\{\vecz(t_i)\}_{i=1}^N$$. In order to obtain $$\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt$$, use numerical quadrature rule (e.g., trapezoidal) to approximate:
 
 $$
-\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt \approx \sum_{i=0}^{N−1} ​w_i \nabla​_{\vecz} \cdot​ \vecv_{\vecphi}​(\vecz(t_i​),t_i​)=\sum_{i=0}^{N−1} ​w_i \text{Tr}\Big(\frac{\partial \vecv_{\vecphi}(\vecz(t), t)}{\partial \vecz}\Big)\right|_{t=t_i} \approx \veceps^T \Big(\frac{\partial \vecv_{\vecphi}}{\partial \vecz} \Big)\right|_{z(t_i),t_i} \veceps,
+\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt \approx \sum_{i=0}^{N−1} ​w_i \nabla​_{\vecz} \cdot​ \vecv_{\vecphi}​(\vecz(t_i​),t_i​)=\sum_{i=0}^{N−1} ​w_i \text{Tr}\Big(\frac{\partial \vecv_{\vecphi}(\vecz(t), t)}{\partial \vecz}\Big) \right|_{t=t_i} \approx \veceps^T \Big(\frac{\partial \vecv_{\vecphi}}{\partial \vecz} \Big) \right|_{z(t_i),t_i} \veceps,
 $$
 
 ----------------------------------------------------------------
