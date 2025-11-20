@@ -6,7 +6,15 @@ chen2014stochastic:
   pages: "1683-1691"
   year: "2014"
   organization: "PMLR"
-
+  
+chen2018neural:
+  type: "article"
+  title: "Neural ordinary differential equations"
+  authors: ["Chen, Ricky TQ", "Rubanova, Yulia", "Bettencourt, Jesse", "Duvenaud, David K"]
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "31"
+  year: "2018"
+  
 chewi2025logconcave:
   type: "unpublished"
   title: "Log-Concave Sampling"
