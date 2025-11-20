@@ -214,4 +214,4 @@ $$
 -->
 
 ---
-{% include bibliography.html keys="rezende2015variational,silver2016mastering," %}
+{% include bibliography.html keys="rezende2015variational,chen2018neural," %}
