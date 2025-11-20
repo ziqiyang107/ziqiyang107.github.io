@@ -145,7 +145,13 @@ $$
 \int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt \approx \sum_{i=0}^{N−1} ​w_i \nabla​_{\vecz} \cdot​ \vecv_{\vecphi}​(\vecz(t_i​),t_i​)=\sum_{i=0}^{N−1} ​w_i \left.\text{Tr}\Big(\frac{\partial \vecv_{\vecphi}(\vecz(t), t)}{\partial \vecz}\Big) \right|_{t=t_i} \approx \sum_{i=0}^{N−1} \left. \veceps^T \Big(\frac{\partial \vecv_{\vecphi}}{\partial \vecz} \Big) \right|_{z(t_i),t_i} \veceps,
 $$
 
-After we have all simulated values for the log-likelihood, we can take the derivative $L_{NODE}(\vecphi)$
+After we have all simulated values for the log-likelihood, we can take the derivative $\nabla_{\vecphi} L_{NODE}(\vecphi)$, and proceeds to optimize. For sampling, we just sample $\vecz(0) \sim p_{prior} (\vecz)$ (e.g., Gaussian), then integrate the ODE forwards in time from $t=0$ to $t = T$:
+
+$$
+\frac{d\vecz(t)}{dt}=\vecv_{\vecphi}(\vecz, t) \quad \text{with initial condition }\vecz(0)
+$$
+
+The generated sample is $\vecx=\vecz(T)$.
 
 ----------------------------------------------------------------
 
