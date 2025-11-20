@@ -139,7 +139,11 @@ $$
 L_{NODE}(\vecphi) = \mathbb{E}_{\vecx \sim p_{data}}\log p_{\vecphi}(\vecx, T)
 $$
 
-However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$. We can start from a random data point $\vecx$, and solve the ODE $$\frac{d\vecz}{dt}=\vecv_{\vecphi}(\vecz, t) $$ backward in time from $T$ to $0$, and collect intermediate trajectory values $$\{\vecz(t_i)\}$$. In order to obtain $$\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt$$
+However, evaluating this requires knowing the intractable integral, and we need to know $z(t)$ along the trajectory $0 \rightarrow T$. We can start from a random data point $\vecx$, and solve the ODE $$\frac{d\vecz}{dt}=\vecv_{\vecphi}(\vecz, t) $$ backward in time from $T$ to $0$, and collect intermediate trajectory values $$\{\vecz(t_i)\}\_{i=1}^N$$. In order to obtain $$\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt$$, use numerical quadrature rule (e.g., trapezoidal) to approximate:
+
+$$
+\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt \approx \sum_{i=0}^{N−1} ​w_i \nabla​_{\vecz} \cdot​ \vecv_{\vecphi}​(\vecz(t_i​),t_i​),
+$$
 
 ----------------------------------------------------------------
 
