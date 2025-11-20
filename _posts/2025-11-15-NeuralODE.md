@@ -109,7 +109,21 @@ This gives a straightforward formula for the derivative of $f(x,y(x))$ in terms 
 
 
 ## Neural ODEs
+{% capture th_content %}
+Let $\vecz(t)$ be a finite continuous random variable with probability $p(\vecz(t))$ dependent on time. Let $d\vecz/dt = f(\vecz(t), t)$ be a differential equation describing a continuous-in-time transformation of $\vecz(t)$. Assuming that $f$ is uniformly Lipschitz continuous in $\vecz$ and continuous in $t$, then the change in log probability also follows a differential equation
 
+$$
+\frac{\log p(\vecz(t))}{\partial t} = -\text{Tr}\Big(\frac{df}{d\vecz(t)}\Big)
+$$
+
+{% endcapture %}
+
+{% include theorem.html 
+   type="theorem" 
+   title="Theorem" 
+   name="Instantaneous Change of Variables"
+   content=th_content 
+%}
 
 
 
