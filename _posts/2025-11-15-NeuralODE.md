@@ -127,13 +127,13 @@ $$
    content=th_content 
 %}
 
-If we use the neural network parameterized velocity field $\vecv_{\vecphi}(\vecx(t), t)$ to replace above $f$, and we take the integral, then we get:
+If we use the neural network parameterized velocity field $\vecv_{\vecphi}(\vecz(t), t)$ to replace above $f$, and we take the integral, then we get:
 
 $$
 \log p_{\vecphi}​(\vecx, T)=\log p_{prior}​(\vecz(0))−\int_0^T \nabla_{\vecz}​\cdot \vecv_{\vecphi}​(\vecz(t),t)dt
 $$
 
-We want to optimize following MLE objective:
+where $\vecx=\vecz(T)$. We want to optimize following MLE objective:
 
 $$
 L_{NODE}(\vecphi) = \mathbb{E}_{\vecx \sim p_{data}}\log p_{\vecphi}(\vecx, T)
