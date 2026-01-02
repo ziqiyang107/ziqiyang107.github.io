@@ -7,19 +7,19 @@ date: 2025-01-02
 We model ray termination as an inhomogeneous Poisson process along $t$. Let the ray be at position $r(t)$, then we have 
 
 $$
-Pr[termination in (t,t+dt)∣alive at t]=\sigma(r(t))dt+o(dt)
+\text{Pr[termination in }(t,t+dt)∣\text{alive at }t]=\sigma(r(t))dt+o(dt)
 $$
 
 Hence survival probability: 
 
 $$
-Pr[survive (t,t+dt)∣alive at t]=1−\sigma(r(t))dt+o(dt)
+\text{Pr[survive }(t,t+dt)∣\text{alive at }t]=1−\sigma(r(t))dt+o(dt)
 $$
 
 Define transmittance:
 
 $$
-T(t):=Pr[ray survives from t_n​ to t]
+T(t):=\text{Pr[ray survives from }t_n​ to t]
 $$
 
 with initial condition: $T(t_n​)=1$. Consider survival from $t$ to $t+dt$: 
