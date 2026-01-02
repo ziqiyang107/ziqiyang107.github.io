@@ -16,7 +16,31 @@ $$
 Pr[survive (t,t+dt)∣alive at t]=1−\sigma(r(t))dt+o(dt)
 $$
 
+Define transmittance:
 
+$$
+T(t):=Pr[ray survives from t_n​ to t]
+$$
+
+with initial condition: $T(t_n​)=1$. Consider survival from $t$ to $t+dt$: 
+
+$$
+T(t+dt)=T(t)[1−\sigma(r(t))dt]+o(dt)
+$$
+
+Rearrange to get:
+
+$$
+\frac{T(t+dt)−T(t)​}{dt} = −\sigma(r(t))T(t)+o(1)
+$$
+
+Taking $dt \rightarrow 0$, we obtain the ODE:
+
+$$
+\frac{dT}{dt}(t)=-\sigma(r(t))T(t)
+$$
+
+with $T(t_n)=1$
 
 Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
 {% capture def_content %}
