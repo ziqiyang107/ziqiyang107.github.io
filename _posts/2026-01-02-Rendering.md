@@ -59,13 +59,28 @@ $$
 \text{Pr[}\tau \in (t,t+dt)]=T(t)\sigma(r(t))dt
 $$
 
-Thus the probability density function of $\tau$ is: $p_{\tau}(t)=T(t)\sigma(r(r))$. The pixel color is the expected emitted radiance at termination. Define random variable: $C:=c(r(\tau),d)$, then:
+Thus the probability density function of $\tau$ is: $p_{\tau}(t)=T(t)\sigma(r(t))$. The pixel color is the expected emitted radiance at termination. Define random variable: $C:=c(r(\tau),d)$, then:
 
 $$
-E[C]=\int_{t_n}^​{t_f} ​​c(r(t),d) p_{\tau}​(t)dt=\int_{t_n}^​{t_f} T(t)\sigma(r(t))c(r(t),d)dt  \\
+\begin{align*}
+E[C]=\int_{t_n}^​{t_f} ​​c(r(t),d) p_{\tau}​(t)dt=\int_{t_n}^​{t_f} T(t)\sigma(r(t))c(r(t),d)dt
+\end{align*}
 $$
 
 This is exactly the NeRF equation.
+
+
+
+
+============================================================================================
+============================================================================================
+============================================================================================
+============================================================================================
+
+
+
+
+
 
 
 {% capture def_content %}
