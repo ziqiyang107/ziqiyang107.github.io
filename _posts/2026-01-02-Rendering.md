@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Neural Ordinary Differential Equations Explained"
-date: 2025-11-11
+title: "Rendering Basics"
+date: 2025-01-02
 ---
 ## Preliminaries
 Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
