@@ -4,6 +4,20 @@ title: "Rendering Basics"
 date: 2025-01-02
 ---
 ## Preliminaries
+We model ray termination as an inhomogeneous Poisson process along $t$. Let the ray be at position $r(t)$, then we have 
+
+$$
+Pr[termination in (t,t+dt)∣alive at t]=\sigma(r(t))dt+o(dt)
+$$
+
+Hence survival probability: 
+
+$$
+Pr[survive (t,t+dt)∣alive at t]=1−\sigma(r(t))dt+o(dt)
+$$
+
+
+
 Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
 {% capture def_content %}
 Let $U \subseteq  \mathbb{R}^n$ be an open subset, then a function $f: U \rightarrow \mathbb{R}^m$ is said to be $\textbf{(totally) differentiable}$ at a point $a \in U$ if there exists a linear transformation $df_a: \mathbb{R}^n \rightarrow \mathbb{R}^m$ such that
