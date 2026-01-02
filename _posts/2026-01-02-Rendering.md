@@ -60,17 +60,52 @@ $$
 $$
 
 Thus the probability density function of $\tau$ is: $p_{\tau}(t)=T(t)\sigma(r(t))$. The pixel color is the expected emitted radiance at termination. Define random variable: $C:=c(r(\tau),d)$, then:
-<div id="eq2">
+
 $$
 \begin{align*}
 E[C]&=\int_{t_n}^{t_f} ​​c(r(t),d) p_{\tau}​(t)dt \\
 &=\int_{t_n}^{t_f} T(t)\sigma(r(t))c(r(t),d)dt
 \end{align*}
 $$
-</div>
+
 This is exactly the NeRF equation.
 
+## Deriving discretized rendering equation
+Assume within each bin, for $$t \in [t_i, t_{i+1}]$$:
+<div id="eq2">
+$$
+\begin{align*}
+\sigma(t)​\approx \sigma_i  \\
+c(t) \approx c_i​
+\end{align*}
+$$
+</div>
+Within bin $i$, transmittance can be written as:
 
+$$
+T(t)=T_i ​exp\Big(−\int_{t_i}^​t​ \sigma_i​ ds\Big)=T_i ​e^{-\sigma_i​(t−t_i​)}
+$$
+
+where:
+
+$$
+T_i​=exp\Big(\sum_{j=1}^{i-1}​\sigma_{j}​\delta_{j}\Big​)
+$$
+
+Then for each bin contribution:
+
+$$
+\begin{align*}
+\int_{t_i}^{​t_{i+1}} ​​T(t)\sigma_i​ c_i​ dt​=T_i ​c_i \int_0^{\delta_i} ​​\sigma_i ​e^{−\sigma_i​ s}ds \\
+T_i ​c_i​(1−e^{−\sigma_i​ \delta_i}​)
+\end{align*}​
+$$
+
+Summing all bins, we have
+
+$$
+\hat{C}(r) = \sum_{i=1}^N T_i (1-e^{-\sigma_i \delta_i})c_i
+$$
 
 
 ============================================================================================
