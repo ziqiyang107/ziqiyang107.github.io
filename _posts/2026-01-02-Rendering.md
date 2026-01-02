@@ -40,7 +40,18 @@ $$
 \frac{dT}{dt}(t)=-\sigma(r(t))T(t)
 $$
 
-with $T(t_n)=1$
+with $T(t_n)=1$. Solving the ODE:
+<div id="eq1">
+$$
+\begin{align*}
+\frac{dT}{T}&=-\sigma(r(t))dt \\
+\log T(t)&=-\int_{t_n}^{t}\sigma(r(s))ds \\
+\text{exponentiate: }T(t)&=exp\Big(-\int_{t_n}^{t}\sigma(r(s))ds \Big)
+\end{align*}
+$$
+</div>
+
+
 
 Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
 {% capture def_content %}
