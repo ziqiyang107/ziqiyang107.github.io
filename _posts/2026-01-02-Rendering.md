@@ -63,7 +63,8 @@ Thus the probability density function of $\tau$ is: $p_{\tau}(t)=T(t)\sigma(r(t)
 
 $$
 \begin{align*}
-E[C]=\int_{t_n}^​{t_f} ​​c(r(t),d) p_{\tau}​(t)dt=\int_{t_n}^​{t} T(t)\sigma(r(t))c(r(t),d)dt
+E[C]&=\int_{t_n}^​{t_f} ​​c(r(t),d) p_{\tau}​(t)dt \\
+&\int_{t_n}^​{t} T(t)\sigma(r(t))c(r(t),d)dt
 \end{align*}
 $$
 
