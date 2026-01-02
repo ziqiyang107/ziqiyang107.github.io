@@ -19,7 +19,7 @@ $$
 Define transmittance:
 
 $$
-T(t):=\text{Pr[ray survives from }t_n​ to t]
+T(t):=\text{Pr[ray survives from }t_n​\text{ to }t]
 $$
 
 with initial condition: $T(t_n​)=1$. Consider survival from $t$ to $t+dt$: 
