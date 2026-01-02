@@ -108,7 +108,7 @@ $$
 $$
 
 ## Equivalence to $\alpha-$compositing
-Define $$\alpha_i​:=1−e^{−\sigma_i​ \delta_i}​$$, then we have $$Ti​=\prod_{j=1}^{i−1}​(1−\alpha_j​)$$, so 
+Define $$\alpha_i​:=1−e^{−\sigma_i​ \delta_i}​$$, then we have $$T_i​=\prod_{j=1}^{i−1}​(1−\alpha_j​)$$, so 
 
 $$
 \hat{C}(r)=\sum_i \alpha_i​ \prod_{j<i}(1−\alpha_j​)c_i​
