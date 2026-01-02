@@ -3,7 +3,7 @@ layout: post
 title: "Rendering Basics"
 date: 2025-01-02
 ---
-## Preliminaries
+## Deriving T(t)
 We model ray termination as an inhomogeneous Poisson process along $t$. Let the ray be at position $r(t)$, then we have 
 
 $$
@@ -52,8 +52,22 @@ $$
 </div>
 
 
+## Deriving expected color
+Define random variable: $\tau=$termination time of the ray, we now compute its probability density. The probability that the ray: survives up to $t$, and terminates in $(t,t+dt)$ is:
 
-Before we get into the introduction to neural ODE, we need to review total derivative, multivariate chain rule, backpropagation.
+$$
+\text{Pr[}\tau \in (t,t+dt)]=T(t)\sigma(r(t))dt
+$$
+
+Thus the probability density function of $\tau$ is: $p_{\tau}(t)=T(t)\sigma(r(r))$. The pixel color is the expected emitted radiance at termination. Define random variable: $C:=c(r(\tau),d)$, then:
+
+$$
+E[C]=\int_{t_n}^​{t_f} ​​c(r(t),d) p_{\tau}​(t)dt=\int_{t_n}^​{t_f} T(t)\sigma(r(t))c(r(t),d)dt  \\
+$$
+
+This is exactly the NeRF equation.
+
+
 {% capture def_content %}
 Let $U \subseteq  \mathbb{R}^n$ be an open subset, then a function $f: U \rightarrow \mathbb{R}^m$ is said to be $\textbf{(totally) differentiable}$ at a point $a \in U$ if there exists a linear transformation $df_a: \mathbb{R}^n \rightarrow \mathbb{R}^m$ such that
 $$
