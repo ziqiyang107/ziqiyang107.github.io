@@ -89,7 +89,7 @@ $$
 where:
 
 $$
-T_i​=exp \Big\sum_{j=1}^{i-1}​\sigma_j \delta_j \Big)
+T_i​=exp \Big( \sum_{j=1}^{i-1}​\sigma_j \delta_j \Big)
 $$
 
 Then for each bin contribution:
