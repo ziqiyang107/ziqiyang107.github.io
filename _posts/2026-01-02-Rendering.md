@@ -83,7 +83,7 @@ $$
 Within bin $i$, transmittance can be written as:
 
 $$
-T(t)=T_i ​exp\Big(−\int_{t_i}^​t​ \sigma_i​ ds\Big)=T_i ​e^{-\sigma_i​(t−t_i​)}
+T(t)=T_i ​exp\Big(−\int_{t_i}^t \sigma_i​ ds\Big)=T_i ​e^{-\sigma_i​(t−t_i​)}
 $$
 
 where:
