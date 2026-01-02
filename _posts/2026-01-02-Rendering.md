@@ -114,6 +114,7 @@ $$
 \hat{C}(r)=\sum_i \alpha_i​ \prod_{j<i}(1−\alpha_j​)c_i​
 $$
 
+## Gaussian splatting
 
 
 
