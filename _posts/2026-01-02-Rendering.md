@@ -83,13 +83,13 @@ $$
 Within bin $i$, transmittance can be written as:
 
 $$
-T(t)=T_i ​exp\Big(−\int_{t_i}^t \sigma_i​ ds\Big)=T_i ​e^{-\sigma_i​(t−t_i​)}
+T(t)=T_i ​exp \Big(−\int_{t_i}^t \sigma_i​ ds\Big)=T_i ​e^{-\sigma_i​(t−t_i​)}
 $$
 
 where:
 
 $$
-T_i​=exp \Big(\sum_{j=1}^{i-1}​\sigma_j\delta_j\Big​)
+T_i​=exp \Big\sum_{j=1}^{i-1}​\sigma_j \delta_j \Big)
 $$
 
 Then for each bin contribution:
